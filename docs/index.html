@@ -163,8 +163,8 @@
                             playerStats[primaryName].penta_kills += parseInt(player.PENTA_KILLS || 0);
                             playerStats[primaryName].time_played += parseInt(player.TIME_PLAYED || 0, 10);
                             playerStats[primaryName].damage += parseInt(player.TOTAL_DAMAGE_DEALT_TO_CHAMPIONS || 0, 10);
-                            playerStats[primaryName].cs += parseInt(player.Missions_CreepScore || 0, 10);
-
+                            playerStats[primaryName].cs += parseInt(player.MINIONS_KILLED || 0, 10);
+                            playerStats[primaryName].cs += parseInt(player.NEUTRAL_MINIONS_KILLED || 0, 10);
 
                             if (!playerStats[primaryName].skins[player.SKIN]) {
                                 playerStats[primaryName].skins[player.SKIN] = 0;
@@ -241,8 +241,8 @@
                     <p><strong>Games Played:</strong> ${stats.matches}</p>
                     <p><strong>Winrate:</strong> ${stats.WinRate.toFixed(2)}%</p>
                     <p><strong>KDA:</strong> ${stats.kda.toFixed(2)}</p>
-                    <p><strong>DPM:</strong> ${stats.dpm}</p>
-                    <p><strong>CSPM:</strong> ${stats.cspm}</p>
+                    <p><strong>DPM:</strong> ${stats.dpm.toFixed(2)}</p>
+                    <p><strong>CSPM:</strong> ${stats.cspm.toFixed(2)}</p>
                     <p><strong>Damage:</strong> ${stats.damage}</p>
                     <p><strong>CS:</strong> ${stats.cs}</p>
                     <p><strong>Time Played:</strong> ${stats.time_played}</p>
