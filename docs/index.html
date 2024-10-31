@@ -73,6 +73,10 @@
                 const url = `${apiUrl}/${path}`;
                 const response = await fetch(url);
 
+                if (response.status === 403) {
+                    throw new Error('Rate limit exceeded. Please wait before trying again.');
+                }
+
                 if (!response.ok) {
                     throw new Error(`Network response was not ok: ${response.statusText}`);
                 }
@@ -90,10 +94,12 @@
 
                 return jsonFiles;
             } catch (error) {
-                console.error('Error fetching files from GitHub:', error);
-                return [];
+                console.error('Error fetching files from GitHub:', error.message);
+                alert(error.message); // Display the error message to the user
+                return []; // Return an empty array to indicate failure without clearing the cache
             }
         }
+
 
         async function fetchJsonFromUrl(url) {
             const response = await fetch(url);
@@ -250,21 +256,23 @@
         async function initialize() {
             const loadingIndicator = document.getElementById('loading');
 
-            // Check if player stats are cached in local storage
-            let playerStats = localStorage.getItem('playerStats');
+            // Check if player stats are cached and if the cache is recent (within the last 6 hours)
+            let playerStats = JSON.parse(localStorage.getItem('playerStats'));
+            const cacheTimestamp = localStorage.getItem('cacheTimestamp');
+            const isCacheValid = cacheTimestamp && (Date.now() - parseInt(cacheTimestamp)) < 6 * 60 * 60 * 1000; // 6 hours
 
-            if (playerStats) {
-                // Parse the cached stats if they exist
-                playerStats = JSON.parse(playerStats);
-            } else {
-                // Fetch and process player data if not cached
+            if (!playerStats || !isCacheValid) {
+                // Fetch and process player data if no valid cache is found
                 playerStats = await fetchAndProcessPlayerData();
+                localStorage.setItem('playerStats', JSON.stringify(playerStats));
+                localStorage.setItem('cacheTimestamp', Date.now().toString());
             }
 
             // Sort player names by number of games played in descending order
             const sortedPlayerNames = Object.keys(playerStats).sort((a, b) => playerStats[b].matches - playerStats[a].matches);
 
             const dropdownMenu = document.querySelector('.dropdown-menu');
+            dropdownMenu.innerHTML = ''; // Clear previous dropdown items
             sortedPlayerNames.forEach(playerName => {
                 const playerItem = document.createElement('a');
                 playerItem.className = 'dropdown-item';
@@ -278,6 +286,38 @@
 
             loadingIndicator.style.display = 'none';
         }
+
+        // Refresh Button Logic
+        const refreshButton = document.createElement('button');
+        refreshButton.innerText = 'Refresh Data';
+        refreshButton.className = 'btn btn-secondary';
+        refreshButton.onclick = async () => {
+            try {
+                // Attempt to fetch new data from GitHub
+                const newPlayerStats = await fetchAndProcessPlayerData();
+
+                // Check if newPlayerStats is empty, indicating a fetch failure
+                if (Object.keys(newPlayerStats).length === 0) {
+                    alert("Unable to refresh data: GitHub access limit reached. Try again later.");
+                    return; // Exit early if data was not fetched
+                }
+
+                // If fetch is successful, update the cache
+                localStorage.setItem('playerStats', JSON.stringify(newPlayerStats));
+                localStorage.setItem('cacheTimestamp', Date.now().toString());
+                alert("Data refreshed successfully!");
+
+                // Reinitialize to reflect the new data
+                initialize();
+            } catch (error) {
+                console.error('Error refreshing data:', error);
+                alert("Unable to refresh data: An unexpected error occurred.");
+            }
+        };
+
+        document.body.appendChild(refreshButton);
+
+
 
         // Initialize the dropdown and load data
         initialize();
