@@ -149,7 +149,10 @@
                                     skins: {},
                                     teammateWinRates: [],
                                     WinRate: 0,
-                                    kda: 0
+                                    kda: 0,
+                                    damage: 0,
+                                    time_played: 0,
+                                    cs: 0
                                 };
                             }
 
@@ -158,6 +161,10 @@
                             playerStats[primaryName].assists += parseInt(player.ASSISTS || 0);
                             playerStats[primaryName].deaths += parseInt(player.NUM_DEATHS || 0);
                             playerStats[primaryName].penta_kills += parseInt(player.PENTA_KILLS || 0);
+                            playerStats[primaryName].time_played += parseInt(player.TIME_PLAYED || 0);
+                            playerStats[primaryName].damage += parseInt(player.TOTAL_DAMAGE_DEALT || 0);
+                            playerStats[primaryName].cs += parseInt(player.Missions_CreepScore || 0);
+
 
                             if (!playerStats[primaryName].skins[player.SKIN]) {
                                 playerStats[primaryName].skins[player.SKIN] = 0;
@@ -171,6 +178,8 @@
                             }
                             playerStats[primaryName].WinRate = 100 * playerStats[primaryName].wins / playerStats[primaryName].matches || 0;
                             playerStats[primaryName].kda = (playerStats[primaryName].kills + playerStats[primaryName].assists) / playerStats[primaryName].deaths;
+                            playerStats[primaryName].dpm = (playerStats[primaryName].damage) / (playerStats[primaryName].time_played / 60) 
+                            playerStats[primaryName].cspm = (playerStats[primaryName].cs) / (playerStats[primaryName].time_played / 60) 
 
                             participants.forEach(teammate => {
                                 if (teammate.TEAM === team && teammate.NAME !== player.NAME) {
@@ -191,7 +200,10 @@
                                             skins: {},
                                             teammateWinRates: [],
                                             WinRate: 0,
-                                            kda: 0
+                                            kda: 0,
+                                            damage: 0,
+                                            time_played: 0,
+                                            cs: 0
                                         };
                                     }
 
@@ -226,6 +238,9 @@
                     <p><strong>Games Played:</strong> ${stats.matches}</p>
                     <p><strong>Winrate:</strong> ${stats.WinRate.toFixed(2)}%</p>
                     <p><strong>KDA:</strong> ${stats.kda.toFixed(2)}</p>
+                    <p><strong>Damage:</strong> ${stats.damage}</p>
+                    <p><strong>CS:</strong> ${stats.cs}</p>
+                    <p><strong>Time Played:</strong> ${stats.time_played}</p>
                     <p><strong>Wins:</strong> ${stats.wins}</p>
                     <p><strong>Losses:</strong> ${stats.losses}</p>
                     <p><strong>Kills:</strong> ${stats.kills}</p>
