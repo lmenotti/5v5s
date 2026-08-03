@@ -3,381 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5v5 Stats · Custom LoL League Tracker</title>
-    <meta name="description" content="Player stats dashboard for a private League of Legends 5v5 friend group.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>5v5 · League Stats</title>
+    <meta name="description" content="Player stats for a private League of Legends 5v5 group.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0b1220;
-            --panel: #121b2e;
-            --panel-alt: #18233a;
-            --border: rgba(255, 255, 255, 0.08);
-            --text: #eef2ff;
-            --muted: #94a3b8;
-            --accent: #c89b3c;
-            --accent-soft: rgba(200, 155, 60, 0.15);
-            --win: #22c55e;
-            --loss: #ef4444;
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: 'Inter', system-ui, sans-serif;
-            color: var(--text);
-            background:
-                radial-gradient(circle at top, rgba(200, 155, 60, 0.12), transparent 32rem),
-                linear-gradient(180deg, #0f172a 0%, var(--bg) 100%);
-        }
-
-        .page {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2.5rem 1.25rem 3rem;
-        }
-
-        .hero {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            padding: 0.35rem 0.75rem;
-            border-radius: 999px;
-            background: var(--accent-soft);
-            color: var(--accent);
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            margin: 0 0 0.75rem;
-        }
-
-        .subtitle {
-            color: var(--muted);
-            max-width: 42rem;
-            margin: 0 auto 1rem;
-            line-height: 1.6;
-        }
-
-        .meta {
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
-
-        .toolbar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            justify-content: center;
-            align-items: center;
-            margin: 1.75rem 0 2rem;
-        }
-
-        .player-select {
-            min-width: 260px;
-            background: var(--panel);
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 0.75rem 1rem;
-            font-size: 1rem;
-        }
-
-        .player-select:focus {
-            outline: 2px solid rgba(200, 155, 60, 0.35);
-            border-color: var(--accent);
-        }
-
-        .links a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.92rem;
-        }
-
-        .links a:hover { color: var(--accent); }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1rem;
-        }
-
-        @media (max-width: 992px) {
-            .stats-grid { grid-template-columns: 1fr; }
-        }
-
-        .card-panel {
-            background: rgba(18, 27, 46, 0.92);
-            border: 1px solid var(--border);
-            border-radius: 1rem;
-            padding: 1.25rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
-        }
-
-        .card-panel h2, .card-panel h3 {
-            margin-top: 0;
-            font-size: 1.15rem;
-        }
-
-        .player-name {
-            font-size: 1.5rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .stat-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 0.55rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .stat-row:last-child { border-bottom: 0; }
-
-        .stat-label { color: var(--muted); }
-        .stat-value { font-weight: 600; text-align: right; }
-
-        .highlight-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
-
-        .highlight {
-            background: var(--panel-alt);
-            border: 1px solid var(--border);
-            border-radius: 0.85rem;
-            padding: 0.9rem;
-        }
-
-        .highlight .label {
-            color: var(--muted);
-            font-size: 0.82rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .highlight .value {
-            font-size: 1.35rem;
-            font-weight: 700;
-        }
-
-        .list-panel ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            max-height: 26rem;
-            overflow: auto;
-        }
-
-        .list-panel li {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 0.65rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .list-panel li:last-child { border-bottom: 0; }
-
-        .list-count {
-            color: var(--accent);
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .loading, .empty-state {
-            text-align: center;
-            color: var(--muted);
-            padding: 3rem 1rem;
-        }
-
-        .footer {
-            margin-top: 2rem;
-            text-align: center;
-            color: var(--muted);
-            font-size: 0.88rem;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="page">
-        <header class="hero">
-            <div class="eyebrow">AI-assisted side project</div>
-            <h1>5v5 Stats</h1>
-            <p class="subtitle">
-                A live stats dashboard for a private League of Legends friend group —
-                replay data in, player leaderboards and matchup history out.
-            </p>
-            <p class="meta" id="meta">Loading match data…</p>
-        </header>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="grid-bg" aria-hidden="true"></div>
 
-        <div class="toolbar">
-            <select id="playerSelect" class="player-select" aria-label="Select player">
-                <option value="">Select a player…</option>
-            </select>
-            <div class="links">
-                <a href="https://github.com/lmenotti/5v5s" target="_blank" rel="noopener">View source on GitHub</a>
+    <header class="site-header">
+        <div class="brand">
+            <span class="brand-mark">5v5</span>
+            <span class="brand-sub">league stats</span>
+        </div>
+        <p class="header-meta" id="meta">syncing…</p>
+    </header>
+
+    <main class="shell">
+        <section class="intro">
+            <h1 class="headline">
+                <span class="headline-line">custom games.</span>
+                <span class="headline-line headline-accent">real numbers.</span>
+            </h1>
+            <p class="lede">Win rates, match history, champions, and teammates — pulled from 87 recorded 5v5s.</p>
+        </section>
+
+        <section class="player-rail-wrap">
+            <div class="rail-label">
+                <span>01</span>
+                <span>select summoner</span>
             </div>
+            <div class="player-rail" id="playerRail" role="tablist" aria-label="Players"></div>
+        </section>
+
+        <div class="loading" id="loading">
+            <span class="loading-dot"></span>
+            <span class="loading-dot"></span>
+            <span class="loading-dot"></span>
         </div>
 
-        <div id="playerStats" class="stats-grid"></div>
-        <div class="loading" id="loading">Loading player data…</div>
-        <div class="empty-state" id="emptyState" hidden>Choose a player to explore their stats.</div>
+        <div class="empty-state" id="emptyState" hidden>No player data available.</div>
 
-        <footer class="footer">
-            Built as a small AI-assisted tooling experiment · 87 custom matches · GitHub Pages
-        </footer>
-    </div>
+        <div class="dashboard" id="dashboard" hidden>
+            <section class="hero-panel panel">
+                <div class="hero-top">
+                    <div>
+                        <p class="panel-tag">active profile</p>
+                        <h2 class="player-title" id="playerTitle">—</h2>
+                    </div>
+                    <div class="record-badge" id="recordBadge">—</div>
+                </div>
 
-    <script>
-        const DATA_URL = 'data/players.json';
-        let playerStats = {};
-
-        async function loadPlayerData() {
-            const response = await fetch(DATA_URL);
-            if (!response.ok) {
-                throw new Error(`Failed to load player data (${response.status})`);
-            }
-            return response.json();
-        }
-
-        function renderPlayerStats(playerName, stats) {
-            const container = document.getElementById('playerStats');
-            const emptyState = document.getElementById('emptyState');
-            emptyState.hidden = true;
-
-            const avgTeammateWinRate = stats.teammateWinRates.length > 0
-                ? stats.teammateWinRates.reduce((acc, rate) => acc + rate, 0) / stats.teammateWinRates.length * 100
-                : 0;
-
-            const sortedSkins = Object.entries(stats.skins).sort((a, b) => b[1] - a[1]);
-            const sortedTeammates = Object.entries(stats.teammates).sort((a, b) => b[1] - a[1]);
-
-            const statRow = (label, value) => `
-                <div class="stat-row">
-                    <span class="stat-label">${label}</span>
-                    <span class="stat-value">${value}</span>
-                </div>`;
-
-            container.innerHTML = `
-                <section class="card-panel">
-                    <p class="player-name">${playerName}</p>
-                    <div class="highlight-grid">
-                        <div class="highlight">
-                            <div class="label">Games</div>
-                            <div class="value">${stats.matches}</div>
-                        </div>
-                        <div class="highlight">
-                            <div class="label">Win rate</div>
-                            <div class="value">${stats.WinRate.toFixed(1)}%</div>
-                        </div>
-                        <div class="highlight">
-                            <div class="label">KDA</div>
-                            <div class="value">${stats.kda.toFixed(2)}</div>
-                        </div>
-                        <div class="highlight">
-                            <div class="label">DPM</div>
-                            <div class="value">${stats.dpm.toFixed(0)}</div>
+                <div class="readout-grid">
+                    <div class="readout readout-featured">
+                        <span class="readout-label">win rate</span>
+                        <span class="readout-value" id="statWinRate">—</span>
+                        <div class="meter">
+                            <div class="meter-fill" id="winRateMeter"></div>
                         </div>
                     </div>
-                    ${statRow('Record', `${stats.wins}W / ${stats.losses}L`)}
-                    ${statRow('K / D / A', `${stats.kills} / ${stats.deaths} / ${stats.assists}`)}
-                    ${statRow('Damage to champions', stats.damage.toLocaleString())}
-                    ${statRow('CS per minute', stats.total_cspm.toFixed(2))}
-                    ${statRow('Non-support CS/min', stats.cspm.toFixed(2))}
-                    ${statRow('Pentakills', stats.penta_kills)}
-                    ${statRow('Avg teammate win rate', `${avgTeammateWinRate.toFixed(1)}%`)}
-                </section>
-                <section class="card-panel list-panel">
-                    <h2>Champions played</h2>
-                    <ul>
-                        ${sortedSkins.map(([skin, count]) => `
-                            <li><span>${skin}</span><span class="list-count">${count}</span></li>
-                        `).join('') || '<li>No champion data</li>'}
-                    </ul>
-                </section>
-                <section class="card-panel list-panel">
-                    <h2>Most common teammates</h2>
-                    <ul>
-                        ${sortedTeammates.map(([teammate, gamesWithTeammate]) => {
-                            const pct = (gamesWithTeammate / stats.matches * 100).toFixed(0);
-                            return `<li><span>${teammate}</span><span class="list-count">${gamesWithTeammate} (${pct}%)</span></li>`;
-                        }).join('') || '<li>No teammate data</li>'}
-                    </ul>
-                </section>
-            `;
-        }
+                    <div class="readout">
+                        <span class="readout-label">games</span>
+                        <span class="readout-value" id="statGames">—</span>
+                    </div>
+                    <div class="readout">
+                        <span class="readout-label">kda</span>
+                        <span class="readout-value" id="statKda">—</span>
+                    </div>
+                    <div class="readout">
+                        <span class="readout-label">dpm</span>
+                        <span class="readout-value" id="statDpm">—</span>
+                    </div>
+                </div>
+            </section>
 
-        function populatePlayerSelect(sortedPlayerNames) {
-            const select = document.getElementById('playerSelect');
-            select.innerHTML = '<option value="">Select a player…</option>';
-            sortedPlayerNames.forEach(playerName => {
-                const option = document.createElement('option');
-                option.value = playerName;
-                option.textContent = `${playerName} (${playerStats[playerName].matches} games)`;
-                select.appendChild(option);
-            });
+            <section class="detail-panel panel">
+                <div class="panel-head">
+                    <p class="panel-tag">02 · combat</p>
+                    <h3>box score</h3>
+                </div>
+                <dl class="spec-list" id="combatStats"></dl>
+            </section>
 
-            select.addEventListener('change', () => {
-                const name = select.value;
-                if (name) {
-                    renderPlayerStats(name, playerStats[name]);
-                }
-            });
-        }
+            <section class="champ-panel panel">
+                <div class="panel-head">
+                    <p class="panel-tag">03 · picks</p>
+                    <h3>champion pool</h3>
+                </div>
+                <ul class="bar-list" id="champList"></ul>
+            </section>
 
-        async function initialize() {
-            const loadingIndicator = document.getElementById('loading');
-            const meta = document.getElementById('meta');
-            const emptyState = document.getElementById('emptyState');
+            <section class="team-panel panel">
+                <div class="panel-head">
+                    <p class="panel-tag">04 · roster</p>
+                    <h3>frequent teammates</h3>
+                </div>
+                <ul class="bar-list" id="teammateList"></ul>
+            </section>
+        </div>
+    </main>
 
-            try {
-                const payload = await loadPlayerData();
-                playerStats = payload.players;
-                const generatedAt = new Date(payload.generatedAt).toLocaleString(undefined, {
-                    dateStyle: 'medium',
-                    timeStyle: 'short',
-                });
-                meta.textContent = `${payload.matchCount} matches tracked · last updated ${generatedAt}`;
+    <footer class="site-footer">
+        <span>private 5v5 league</span>
+        <a href="https://github.com/lmenotti/5v5s" target="_blank" rel="noopener">source</a>
+    </footer>
 
-                const sortedPlayerNames = Object.keys(playerStats).sort(
-                    (a, b) => playerStats[b].matches - playerStats[a].matches
-                );
-
-                populatePlayerSelect(sortedPlayerNames);
-
-                if (sortedPlayerNames.length > 0) {
-                    const defaultPlayer = sortedPlayerNames[0];
-                    document.getElementById('playerSelect').value = defaultPlayer;
-                    renderPlayerStats(defaultPlayer, playerStats[defaultPlayer]);
-                } else {
-                    emptyState.hidden = false;
-                }
-            } catch (error) {
-                console.error('Error loading player data:', error);
-                meta.textContent = 'Unable to load match data right now.';
-                emptyState.textContent = 'Stats are temporarily unavailable.';
-                emptyState.hidden = false;
-            } finally {
-                loadingIndicator.style.display = 'none';
-            }
-        }
-
-        initialize();
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
