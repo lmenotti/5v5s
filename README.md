@@ -24,14 +24,17 @@ See [docs/REPLAY_INGESTION.md](docs/REPLAY_INGESTION.md) for replay import optio
 
 1. Import or export replays to `json_files/` ([ReplayBook](https://github.com/fraxiinus/ReplayBook) or `scripts/import_replays.py`)
 2. Run `python3 scripts/build_stats.py`
-3. Commit `json_files/`, `docs/data/players.json`, and `stats.txt`
+3. Commit `json_files/`, `docs/data/players.json`, `docs/data/league.json`, and `stats.txt`
+
+Public dashboard data uses codenames from `scripts/demo_names.json`. `stats.txt` keeps real names locally.
 
 ## Scripts
 
 | Script | Purpose |
 |--------|---------|
 | `scripts/import_replays.py` | Convert `.rofl` replays → `json_files/` |
-| `scripts/build_stats.py` | Build dashboard data + `stats.txt` |
+| `scripts/build_stats.py` | Build dashboard + league data + `stats.txt` |
+| `scripts/demo_names.json` | Public-site codename map |
 | `scripts/analyze_teammates.py` | Teammate win-rate vs self win-rate |
 | `scripts/analyze_champion.py` | Per-champion stats (e.g. `Zac`) |
 | `scripts/analyze_roles.py` | Role distribution by player |
@@ -45,7 +48,8 @@ Core scripts use **Python 3 stdlib only**. Optional notebook dependencies are in
 |------|---------|
 | `json_files/` | Match data (one JSON file per game) |
 | `scripts/` | Import, build, and analysis tooling |
-| `docs/data/players.json` | Precomputed stats for the dashboard |
+| `docs/data/players.json` | Anonymized player stats for the dashboard |
+| `docs/data/league.json` | Rankings, meta, and duo stats |
 | `docs/` | GitHub Pages site + documentation |
 | `notebooks/legacy/` | Archived 2024 exploration notebooks |
 | `RoflBatchExporter/` | Optional .NET replay importer |
