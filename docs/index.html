@@ -23,7 +23,7 @@
     </header>
 
     <main class="shell">
-        <section class="intro">
+        <section class="intro view-profile-only">
             <h1 class="headline">
                 <span class="headline-line">custom games.</span>
                 <span class="headline-line headline-accent">real numbers.</span>
@@ -44,6 +44,135 @@
         </nav>
 
         <section class="league-strip panel" id="leagueStrip" hidden></section>
+
+        <section class="view-panel panel compare-panel" id="comparePanel" hidden>
+            <div class="panel-head">
+                <p class="panel-tag">league · head to head</p>
+                <h3>compare players</h3>
+            </div>
+            <div class="compare-picker">
+                <div class="compare-slot">
+                    <label for="compareA">player A</label>
+                    <select id="compareA" class="compare-select"></select>
+                </div>
+                <div class="compare-vs">vs</div>
+                <div class="compare-slot">
+                    <label for="compareB">player B</label>
+                    <select id="compareB" class="compare-select"></select>
+                </div>
+            </div>
+            <div class="compare-summary panel" id="compareSummary"></div>
+            <div class="compare-grid" id="compareGrid"></div>
+            <section class="compare-shared panel">
+                <div class="panel-head compact">
+                    <p class="panel-tag">overlap</p>
+                    <h3>shared champions</h3>
+                </div>
+                <ul class="tag-list" id="compareShared"></ul>
+            </section>
+        </section>
+
+        <section class="view-panel panel draft-panel" id="draftPanel" hidden>
+            <div class="panel-head">
+                <p class="panel-tag">league · what-if</p>
+                <h3>team draft simulator</h3>
+                <p class="panel-note">Pick five per side, or hit auto-fill. Estimates win rate from solo stats plus duo synergy.</p>
+            </div>
+
+            <div class="draft-layout">
+                <div class="draft-team team-a" id="draftTeamA">
+                    <div class="draft-team-head">
+                        <h4>blue side</h4>
+                        <button type="button" class="draft-btn" data-clear="a">clear</button>
+                    </div>
+                    <div class="draft-slots" id="draftSlotsA">
+                        <p class="draft-loading">Loading roster…</p>
+                    </div>
+                    <div class="draft-actions">
+                        <button type="button" class="draft-btn primary" data-autofill="a">auto-fill top 5</button>
+                    </div>
+                </div>
+                <div class="draft-vs">vs</div>
+                <div class="draft-team team-b" id="draftTeamB">
+                    <div class="draft-team-head">
+                        <h4>red side</h4>
+                        <button type="button" class="draft-btn" data-clear="b">clear</button>
+                    </div>
+                    <div class="draft-slots" id="draftSlotsB">
+                        <p class="draft-loading">Loading roster…</p>
+                    </div>
+                    <div class="draft-actions">
+                        <button type="button" class="draft-btn primary" data-autofill="b">auto-fill top 5</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="draft-simulate-wrap">
+                <button type="button" class="draft-simulate" id="draftSimulate" disabled>simulate matchup</button>
+            </div>
+
+            <div class="draft-results" id="draftResults" hidden></div>
+        </section>
+
+        <section class="view-panel panel records-panel" id="recordsPanel" hidden>
+            <div class="panel-head">
+                <p class="panel-tag">league · hall of fame</p>
+                <h3>records board</h3>
+                <p class="panel-note">Single-game peaks and career milestones across the league.</p>
+            </div>
+            <div class="record-grid" id="recordGrid"></div>
+        </section>
+
+        <section class="view-panel panel rankings-panel" id="rankingsPanel" hidden>
+            <div class="panel-head">
+                <p class="panel-tag">league · standings</p>
+                <h3>full rankings</h3>
+            </div>
+            <div class="table-wrap">
+                <table class="rank-table" id="rankTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>player</th>
+                            <th>games</th>
+                            <th>record</th>
+                            <th>wr</th>
+                            <th>kda</th>
+                            <th>dpm</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="view-panel meta-panel" id="metaPanel" hidden>
+            <div class="meta-grid">
+                <section class="panel">
+                    <div class="panel-head">
+                        <p class="panel-tag">league · volume</p>
+                        <h3>at a glance</h3>
+                    </div>
+                    <dl class="spec-list" id="metaTotals"></dl>
+                </section>
+                <section class="panel">
+                    <div class="panel-head">
+                        <p class="panel-tag">league · picks</p>
+                        <h3>champion meta</h3>
+                    </div>
+                    <ul class="bar-list" id="metaChamps"></ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="view-panel panel duos-panel" id="duosPanel" hidden>
+            <div class="panel-head">
+                <p class="panel-tag">league · synergy</p>
+                <h3>strongest duos</h3>
+                <p class="panel-note">Pairs with 5+ games together, sorted by win rate.</p>
+            </div>
+            <ul class="duo-list" id="duoList"></ul>
+        </section>
 
         <section class="player-rail-wrap view-profile-only" id="playerRailWrap">
             <div class="rail-label">
@@ -125,131 +254,6 @@
                 <ul class="bar-list" id="teammateList"></ul>
             </section>
         </div>
-
-        <section class="view-panel panel compare-panel" id="comparePanel" hidden>
-            <div class="panel-head">
-                <p class="panel-tag">league · head to head</p>
-                <h3>compare players</h3>
-            </div>
-            <div class="compare-picker">
-                <div class="compare-slot">
-                    <label for="compareA">player A</label>
-                    <select id="compareA" class="compare-select"></select>
-                </div>
-                <div class="compare-vs">vs</div>
-                <div class="compare-slot">
-                    <label for="compareB">player B</label>
-                    <select id="compareB" class="compare-select"></select>
-                </div>
-            </div>
-            <div class="compare-summary panel" id="compareSummary"></div>
-            <div class="compare-grid" id="compareGrid"></div>
-            <section class="compare-shared panel">
-                <div class="panel-head compact">
-                    <p class="panel-tag">overlap</p>
-                    <h3>shared champions</h3>
-                </div>
-                <ul class="tag-list" id="compareShared"></ul>
-            </section>
-        </section>
-
-        <section class="view-panel panel draft-panel" id="draftPanel" hidden>
-            <div class="panel-head">
-                <p class="panel-tag">league · what-if</p>
-                <h3>team draft simulator</h3>
-                <p class="panel-note">Pick five per side. Estimates win rate from individual stats plus duo synergy from shared game history.</p>
-            </div>
-
-            <div class="draft-layout">
-                <div class="draft-team team-a" id="draftTeamA">
-                    <div class="draft-team-head">
-                        <h4>blue side</h4>
-                        <button type="button" class="draft-btn" data-clear="a">clear</button>
-                    </div>
-                    <div class="draft-slots" id="draftSlotsA"></div>
-                    <div class="draft-actions">
-                        <button type="button" class="draft-btn primary" data-autofill="a">auto-fill</button>
-                    </div>
-                </div>
-                <div class="draft-vs">vs</div>
-                <div class="draft-team team-b" id="draftTeamB">
-                    <div class="draft-team-head">
-                        <h4>red side</h4>
-                        <button type="button" class="draft-btn" data-clear="b">clear</button>
-                    </div>
-                    <div class="draft-slots" id="draftSlotsB"></div>
-                    <div class="draft-actions">
-                        <button type="button" class="draft-btn primary" data-autofill="b">auto-fill</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="draft-simulate-wrap">
-                <button type="button" class="draft-simulate" id="draftSimulate" disabled>simulate matchup</button>
-            </div>
-
-            <div class="draft-results" id="draftResults" hidden></div>
-        </section>
-
-        <section class="view-panel panel records-panel" id="recordsPanel" hidden>
-            <div class="panel-head">
-                <p class="panel-tag">league · hall of fame</p>
-                <h3>records board</h3>
-                <p class="panel-note">Single-game peaks and career milestones across the league.</p>
-            </div>
-            <div class="record-grid" id="recordGrid"></div>
-        </section>
-
-        <section class="view-panel panel rankings-panel" id="rankingsPanel" hidden>
-            <div class="panel-head">
-                <p class="panel-tag">league · standings</p>
-                <h3>full rankings</h3>
-            </div>
-            <div class="table-wrap">
-                <table class="rank-table" id="rankTable">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>player</th>
-                            <th>games</th>
-                            <th>record</th>
-                            <th>wr</th>
-                            <th>kda</th>
-                            <th>dpm</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="view-panel meta-panel" id="metaPanel" hidden>
-            <div class="meta-grid">
-                <section class="panel">
-                    <div class="panel-head">
-                        <p class="panel-tag">league · volume</p>
-                        <h3>at a glance</h3>
-                    </div>
-                    <dl class="spec-list" id="metaTotals"></dl>
-                </section>
-                <section class="panel">
-                    <div class="panel-head">
-                        <p class="panel-tag">league · picks</p>
-                        <h3>champion meta</h3>
-                    </div>
-                    <ul class="bar-list" id="metaChamps"></ul>
-                </section>
-            </div>
-        </section>
-
-        <section class="view-panel panel duos-panel" id="duosPanel" hidden>
-            <div class="panel-head">
-                <p class="panel-tag">league · synergy</p>
-                <h3>strongest duos</h3>
-                <p class="panel-note">Pairs with 5+ games together, sorted by win rate.</p>
-            </div>
-            <ul class="duo-list" id="duoList"></ul>
-        </section>
     </main>
 
     <footer class="site-footer">

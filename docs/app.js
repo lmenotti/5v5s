@@ -170,8 +170,11 @@ function setView(view) {
         document.getElementById('comparePanel').hidden = false;
         renderCompare();
     } else if (view === 'draft') {
-        document.getElementById('draftPanel').hidden = false;
+        const panel = document.getElementById('draftPanel');
+        panel.hidden = false;
+        renderDraftSlots();
         updateDraftSimulateButton();
+        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else if (view === 'rankings') {
         document.getElementById('rankingsPanel').hidden = false;
         renderRankings();
@@ -413,8 +416,16 @@ function buildDraftOptions(teamKey, slotIndex) {
 }
 
 function renderDraftSlots() {
+    if (!sortedPlayerNames.length) {
+        return;
+    }
+
     ['a', 'b'].forEach((teamKey) => {
         const container = document.getElementById(`draftSlots${teamKey.toUpperCase()}`);
+        if (!container) {
+            return;
+        }
+
         container.innerHTML = draftTeams[teamKey]
             .map(
                 (_, index) => `
@@ -427,17 +438,6 @@ function renderDraftSlots() {
                 `
             )
             .join('');
-
-        container.querySelectorAll('.draft-select').forEach((select) => {
-            select.addEventListener('change', () => {
-                const team = select.dataset.team;
-                const slot = Number(select.dataset.slot);
-                draftTeams[team][slot] = select.value;
-                renderDraftSlots();
-                updateDraftSimulateButton();
-                document.getElementById('draftResults').hidden = true;
-            });
-        });
     });
 }
 
@@ -573,17 +573,43 @@ function simulateDraft() {
 }
 
 function setupDraftPanel() {
+    const panel = document.getElementById('draftPanel');
+    if (!panel) {
+        return;
+    }
+
     renderDraftSlots();
     updateDraftSimulateButton();
 
-    document.getElementById('draftSimulate').addEventListener('click', simulateDraft);
-
-    document.querySelectorAll('[data-autofill]').forEach((button) => {
-        button.addEventListener('click', () => autofillDraftTeam(button.dataset.autofill));
+    panel.addEventListener('change', (event) => {
+        const select = event.target.closest('.draft-select');
+        if (!select) {
+            return;
+        }
+        const team = select.dataset.team;
+        const slot = Number(select.dataset.slot);
+        draftTeams[team][slot] = select.value;
+        renderDraftSlots();
+        updateDraftSimulateButton();
+        document.getElementById('draftResults').hidden = true;
     });
 
-    document.querySelectorAll('[data-clear]').forEach((button) => {
-        button.addEventListener('click', () => clearDraftTeam(button.dataset.clear));
+    panel.addEventListener('click', (event) => {
+        const autofill = event.target.closest('[data-autofill]');
+        if (autofill) {
+            autofillDraftTeam(autofill.dataset.autofill);
+            return;
+        }
+
+        const clear = event.target.closest('[data-clear]');
+        if (clear) {
+            clearDraftTeam(clear.dataset.clear);
+            return;
+        }
+
+        if (event.target.id === 'draftSimulate') {
+            simulateDraft();
+        }
     });
 }
 
