@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T19:34:22.098960+00:00",
+  "generatedAt": "2026-08-03T19:40:05.586289+00:00",
   "matchCount": 87,
   "players": {
     "NOMAD": {
@@ -388,7 +388,19 @@
       "damage": 2009419,
       "time_played": 144753,
       "cs": 16195,
-      "time_played_cs": 135874
+      "time_played_cs": 135874,
+      "form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
     },
     "VECTOR": {
       "matches": 77,
@@ -794,7 +806,19 @@
       "damage": 1613108,
       "time_played": 146829,
       "cs": 13849,
-      "time_played_cs": 135309
+      "time_played_cs": 135309,
+      "form": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ]
     },
     "BRACKET": {
       "matches": 41,
@@ -1021,7 +1045,19 @@
       "damage": 603801,
       "time_played": 78144,
       "cs": 5376,
-      "time_played_cs": 55773
+      "time_played_cs": 55773,
+      "form": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
     },
     "KITE": {
       "matches": 1,
@@ -1054,7 +1090,10 @@
       "damage": 3242,
       "time_played": 945,
       "cs": 41,
-      "time_played_cs": 945
+      "time_played_cs": 945,
+      "form": [
+        1
+      ]
     },
     "DELTA": {
       "matches": 69,
@@ -1415,7 +1454,19 @@
       "damage": 1544649,
       "time_played": 132256,
       "cs": 14586,
-      "time_played_cs": 128542
+      "time_played_cs": 128542,
+      "form": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ]
     },
     "EMBER": {
       "matches": 54,
@@ -1707,7 +1758,19 @@
       "damage": 1271119,
       "time_played": 103117,
       "cs": 12134,
-      "time_played_cs": 103117
+      "time_played_cs": 103117,
+      "form": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
     },
     "UMBRA": {
       "matches": 32,
@@ -1896,7 +1959,19 @@
       "damage": 318072,
       "time_played": 61344,
       "cs": 3504,
-      "time_played_cs": 38559
+      "time_played_cs": 38559,
+      "form": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
     },
     "CEDAR": {
       "matches": 8,
@@ -1973,7 +2048,17 @@
       "damage": 111205,
       "time_played": 14780,
       "cs": 1208,
-      "time_played_cs": 13835
+      "time_played_cs": 13835,
+      "form": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ]
     },
     "CRULLER": {
       "matches": 54,
@@ -2261,7 +2346,19 @@
       "damage": 940217,
       "time_played": 105749,
       "cs": 7695,
-      "time_played_cs": 74282
+      "time_played_cs": 74282,
+      "form": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ]
     },
     "MISO": {
       "matches": 4,
@@ -2314,7 +2411,13 @@
       "damage": 33762,
       "time_played": 6850,
       "cs": 315,
-      "time_played_cs": 4336
+      "time_played_cs": 4336,
+      "form": [
+        0,
+        0,
+        1,
+        0
+      ]
     },
     "GIZMO": {
       "matches": 35,
@@ -2517,7 +2620,19 @@
       "damage": 635587,
       "time_played": 69085,
       "cs": 6312,
-      "time_played_cs": 58117
+      "time_played_cs": 58117,
+      "form": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ]
     },
     "HARBOR": {
       "matches": 56,
@@ -2808,7 +2923,19 @@
       "damage": 804887,
       "time_played": 106629,
       "cs": 5119,
-      "time_played_cs": 47408
+      "time_played_cs": 47408,
+      "form": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
     },
     "VALE": {
       "matches": 30,
@@ -2992,7 +3119,19 @@
       "damage": 319735,
       "time_played": 56365,
       "cs": 3506,
-      "time_played_cs": 35801
+      "time_played_cs": 35801,
+      "form": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
     },
     "KESTREL": {
       "matches": 76,
@@ -3370,7 +3509,19 @@
       "damage": 1369314,
       "time_played": 147756,
       "cs": 14836,
-      "time_played_cs": 141388
+      "time_played_cs": 141388,
+      "form": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
     },
     "TIGER": {
       "matches": 2,
@@ -3411,7 +3562,11 @@
       "damage": 19188,
       "time_played": 3734,
       "cs": 168,
-      "time_played_cs": 1730
+      "time_played_cs": 1730,
+      "form": [
+        1,
+        1
+      ]
     },
     "ECHO": {
       "matches": 38,
@@ -3622,7 +3777,19 @@
       "damage": 366407,
       "time_played": 75352,
       "cs": 1849,
-      "time_played_cs": 21442
+      "time_played_cs": 21442,
+      "form": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ]
     },
     "RIN": {
       "matches": 2,
@@ -3661,7 +3828,11 @@
       "damage": 23800,
       "time_played": 3238,
       "cs": 341,
-      "time_played_cs": 3238
+      "time_played_cs": 3238,
+      "form": [
+        1,
+        1
+      ]
     },
     "ORBIT": {
       "matches": 4,
@@ -3712,7 +3883,13 @@
       "damage": 44567,
       "time_played": 8945,
       "cs": 538,
-      "time_played_cs": 8945
+      "time_played_cs": 8945,
+      "form": [
+        1,
+        0,
+        0,
+        0
+      ]
     },
     "FLUX": {
       "matches": 9,
@@ -3798,7 +3975,18 @@
       "damage": 141314,
       "time_played": 15780,
       "cs": 1261,
-      "time_played_cs": 11717
+      "time_played_cs": 11717,
+      "form": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
     },
     "BIRCH": {
       "matches": 19,
@@ -3928,7 +4116,19 @@
       "damage": 402304,
       "time_played": 37956,
       "cs": 3831,
-      "time_played_cs": 32452
+      "time_played_cs": 32452,
+      "form": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
     },
     "MERIDIAN": {
       "matches": 17,
@@ -4049,7 +4249,19 @@
       "damage": 307773,
       "time_played": 34089,
       "cs": 3722,
-      "time_played_cs": 30374
+      "time_played_cs": 30374,
+      "form": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
     },
     "DYNAMO": {
       "matches": 41,
@@ -4285,7 +4497,19 @@
       "damage": 1082724,
       "time_played": 82351,
       "cs": 8537,
-      "time_played_cs": 72547
+      "time_played_cs": 72547,
+      "form": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ]
     },
     "PIVOT": {
       "matches": 9,
@@ -4367,7 +4591,18 @@
       "damage": 155053,
       "time_played": 18547,
       "cs": 1868,
-      "time_played_cs": 18547
+      "time_played_cs": 18547,
+      "form": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
     },
     "COMET": {
       "matches": 8,
@@ -4438,7 +4673,17 @@
       "damage": 192419,
       "time_played": 15657,
       "cs": 1584,
-      "time_played_cs": 15657
+      "time_played_cs": 15657,
+      "form": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ]
     },
     "AERIAL": {
       "matches": 3,
@@ -4481,7 +4726,12 @@
       "damage": 17641,
       "time_played": 5291,
       "cs": 0,
-      "time_played_cs": 0
+      "time_played_cs": 0,
+      "form": [
+        0,
+        0,
+        0
+      ]
     },
     "PIKE": {
       "matches": 5,
@@ -4535,7 +4785,14 @@
       "damage": 130127,
       "time_played": 10591,
       "cs": 765,
-      "time_played_cs": 8371
+      "time_played_cs": 8371,
+      "form": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
     },
     "MOSS": {
       "matches": 3,
@@ -4578,7 +4835,12 @@
       "damage": 45604,
       "time_played": 6418,
       "cs": 311,
-      "time_played_cs": 4474
+      "time_played_cs": 4474,
+      "form": [
+        0,
+        0,
+        0
+      ]
     },
     "TAKO": {
       "matches": 13,
@@ -4675,7 +4937,19 @@
       "damage": 107673,
       "time_played": 22914,
       "cs": 949,
-      "time_played_cs": 11254
+      "time_played_cs": 11254,
+      "form": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
     },
     "KILO": {
       "matches": 3,
@@ -4722,7 +4996,12 @@
       "damage": 28859,
       "time_played": 4228,
       "cs": 178,
-      "time_played_cs": 2592
+      "time_played_cs": 2592,
+      "form": [
+        0,
+        0,
+        0
+      ]
     },
     "CRIMSON": {
       "matches": 18,
@@ -4845,7 +5124,19 @@
       "damage": 494957,
       "time_played": 33690,
       "cs": 3682,
-      "time_played_cs": 33690
+      "time_played_cs": 33690,
+      "form": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
     },
     "DRIFT": {
       "matches": 1,
@@ -4878,7 +5169,10 @@
       "damage": 4656,
       "time_played": 2556,
       "cs": 137,
-      "time_played_cs": 2556
+      "time_played_cs": 2556,
+      "form": [
+        1
+      ]
     },
     "LANTERN": {
       "matches": 26,
@@ -5043,7 +5337,19 @@
       "damage": 735772,
       "time_played": 50849,
       "cs": 5473,
-      "time_played_cs": 50849
+      "time_played_cs": 50849,
+      "form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ]
     },
     "NOVA": {
       "matches": 10,
@@ -5124,7 +5430,19 @@
       "damage": 227339,
       "time_played": 18898,
       "cs": 1398,
-      "time_played_cs": 12472
+      "time_played_cs": 12472,
+      "form": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
     },
     "SPARROW": {
       "matches": 13,
@@ -5225,7 +5543,19 @@
       "damage": 337118,
       "time_played": 25436,
       "cs": 2105,
-      "time_played_cs": 19862
+      "time_played_cs": 19862,
+      "form": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ]
     },
     "PRISM": {
       "matches": 11,
@@ -5311,7 +5641,19 @@
       "damage": 218349,
       "time_played": 21883,
       "cs": 2171,
-      "time_played_cs": 21883
+      "time_played_cs": 21883,
+      "form": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ]
     },
     "SLATE": {
       "matches": 2,
@@ -5350,7 +5692,11 @@
       "damage": 34678,
       "time_played": 3553,
       "cs": 285,
-      "time_played_cs": 3553
+      "time_played_cs": 3553,
+      "form": [
+        0,
+        0
+      ]
     },
     "SKYLARK": {
       "matches": 1,
@@ -5383,7 +5729,10 @@
       "damage": 22063,
       "time_played": 1802,
       "cs": 216,
-      "time_played_cs": 1802
+      "time_played_cs": 1802,
+      "form": [
+        1
+      ]
     }
   }
 }

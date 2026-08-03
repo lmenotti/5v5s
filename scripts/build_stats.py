@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from demo_data import (  # noqa: E402
     DEFAULT_DEMO_NAMES,
     anonymize_player_stats,
+    attach_player_forms,
     build_league_payload,
     load_demo_names,
 )
@@ -93,6 +94,8 @@ def main() -> None:
         if args.no_anonymize
         else anonymize_player_stats(player_stats, name_map)
     )
+    if not args.no_anonymize:
+        attach_player_forms(public_stats, args.input, aliases, name_map)
     write_players_json(public_stats, match_count, args.json_out)
 
     league_payload = build_league_payload(

@@ -31,9 +31,13 @@
             <p class="lede">Win rates, match history, champions, and teammates — pulled from 87 recorded 5v5s.</p>
         </section>
 
+        <section class="mvp-banner panel" id="mvpBanner" hidden></section>
+
         <nav class="view-nav" id="viewNav" aria-label="Sections" hidden>
             <button type="button" class="view-tab active" data-view="profile">profile</button>
+            <button type="button" class="view-tab" data-view="compare">compare</button>
             <button type="button" class="view-tab" data-view="rankings">rankings</button>
+            <button type="button" class="view-tab" data-view="records">records</button>
             <button type="button" class="view-tab" data-view="meta">meta</button>
             <button type="button" class="view-tab" data-view="duos">duos</button>
         </nav>
@@ -87,6 +91,13 @@
                         <span class="readout-value" id="statDpm">—</span>
                     </div>
                 </div>
+                <div class="form-block" id="formBlock" hidden>
+                    <div class="form-head">
+                        <span class="readout-label">recent form · last 10</span>
+                        <span class="form-summary" id="formSummary"></span>
+                    </div>
+                    <svg class="sparkline" id="formSparkline" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg>
+                </div>
             </section>
 
             <section class="detail-panel panel">
@@ -113,6 +124,42 @@
                 <ul class="bar-list" id="teammateList"></ul>
             </section>
         </div>
+
+        <section class="view-panel panel compare-panel" id="comparePanel" hidden>
+            <div class="panel-head">
+                <p class="panel-tag">league · head to head</p>
+                <h3>compare players</h3>
+            </div>
+            <div class="compare-picker">
+                <div class="compare-slot">
+                    <label for="compareA">player A</label>
+                    <select id="compareA" class="compare-select"></select>
+                </div>
+                <div class="compare-vs">vs</div>
+                <div class="compare-slot">
+                    <label for="compareB">player B</label>
+                    <select id="compareB" class="compare-select"></select>
+                </div>
+            </div>
+            <div class="compare-summary panel" id="compareSummary"></div>
+            <div class="compare-grid" id="compareGrid"></div>
+            <section class="compare-shared panel">
+                <div class="panel-head compact">
+                    <p class="panel-tag">overlap</p>
+                    <h3>shared champions</h3>
+                </div>
+                <ul class="tag-list" id="compareShared"></ul>
+            </section>
+        </section>
+
+        <section class="view-panel panel records-panel" id="recordsPanel" hidden>
+            <div class="panel-head">
+                <p class="panel-tag">league · hall of fame</p>
+                <h3>records board</h3>
+                <p class="panel-note">Single-game peaks and career milestones across the league.</p>
+            </div>
+            <div class="record-grid" id="recordGrid"></div>
+        </section>
 
         <section class="view-panel panel rankings-panel" id="rankingsPanel" hidden>
             <div class="panel-head">

@@ -1222,5 +1222,3193 @@
     "totalDamage": 16718502,
     "avgGameMinutes": 32.2
   },
-  "generatedAt": "2026-08-03T19:34:22.270194+00:00"
+  "records": {
+    "highlights": [
+      {
+        "id": "kills",
+        "label": "Most kills \u00b7 single game",
+        "value": "22",
+        "player": "CRIMSON",
+        "detail": "Katarina"
+      },
+      {
+        "id": "damage",
+        "label": "Most damage \u00b7 single game",
+        "value": "78,333",
+        "player": "CRIMSON",
+        "detail": "Katarina"
+      },
+      {
+        "id": "kda",
+        "label": "Best KDA \u00b7 single game",
+        "value": "29.0",
+        "player": "CRULLER",
+        "detail": "Xerath"
+      },
+      {
+        "id": "streak",
+        "label": "Longest win streak",
+        "value": "10",
+        "player": "NOMAD",
+        "detail": "consecutive wins"
+      },
+      {
+        "id": "penta",
+        "label": "Career pentakills",
+        "value": "0",
+        "player": "VECTOR",
+        "detail": "all-time"
+      },
+      {
+        "id": "longest",
+        "label": "Longest game",
+        "value": "50.2m",
+        "player": "\u2014",
+        "detail": "match 4882842824"
+      },
+      {
+        "id": "shortest",
+        "label": "Shortest game",
+        "value": "15.8m",
+        "player": "\u2014",
+        "detail": "match 3470547662"
+      }
+    ]
+  },
+  "mvp": {
+    "name": "NOMAD",
+    "winRate": 69.33,
+    "kda": 4.1,
+    "matches": 75,
+    "dpm": 832.9
+  },
+  "headToHead": {
+    "NOMAD|VECTOR": {
+      "together": 15,
+      "togetherWins": 11,
+      "versus": 50,
+      "wins": {
+        "VECTOR": 18,
+        "NOMAD": 32
+      }
+    },
+    "BRACKET|NOMAD": {
+      "together": 15,
+      "togetherWins": 12,
+      "versus": 19,
+      "wins": {
+        "BRACKET": 11,
+        "NOMAD": 8
+      }
+    },
+    "KITE|NOMAD": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "DELTA|NOMAD": {
+      "together": 32,
+      "togetherWins": 25,
+      "versus": 31,
+      "wins": {
+        "DELTA": 13,
+        "NOMAD": 18
+      }
+    },
+    "BRACKET|VECTOR": {
+      "together": 20,
+      "togetherWins": 16,
+      "versus": 16,
+      "wins": {
+        "BRACKET": 10,
+        "VECTOR": 6
+      }
+    },
+    "KITE|VECTOR": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "DELTA|VECTOR": {
+      "together": 30,
+      "togetherWins": 17,
+      "versus": 29,
+      "wins": {
+        "DELTA": 16,
+        "VECTOR": 13
+      }
+    },
+    "BRACKET|KITE": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "BRACKET|DELTA": {
+      "together": 14,
+      "togetherWins": 11,
+      "versus": 19,
+      "wins": {
+        "BRACKET": 11,
+        "DELTA": 8
+      }
+    },
+    "DELTA|KITE": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "EMBER|UMBRA": {
+      "together": 18,
+      "togetherWins": 3,
+      "versus": 9,
+      "wins": {
+        "UMBRA": 6,
+        "EMBER": 3
+      }
+    },
+    "CEDAR|EMBER": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "CEDAR": 2,
+        "EMBER": 1
+      }
+    },
+    "CRULLER|EMBER": {
+      "together": 32,
+      "togetherWins": 20,
+      "versus": 5,
+      "wins": {
+        "CRULLER": 4,
+        "EMBER": 1
+      }
+    },
+    "EMBER|MISO": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "CEDAR|UMBRA": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "CEDAR": 1
+      }
+    },
+    "CRULLER|UMBRA": {
+      "together": 13,
+      "togetherWins": 5,
+      "versus": 7,
+      "wins": {
+        "CRULLER": 5,
+        "UMBRA": 2
+      }
+    },
+    "MISO|UMBRA": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "UMBRA": 2
+      }
+    },
+    "CEDAR|CRULLER": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "CEDAR": 3,
+        "CRULLER": 1
+      }
+    },
+    "CEDAR|MISO": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "CEDAR": 1
+      }
+    },
+    "CRULLER|MISO": {
+      "together": 3,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "EMBER|NOMAD": {
+      "together": 24,
+      "togetherWins": 16,
+      "versus": 24,
+      "wins": {
+        "NOMAD": 19,
+        "EMBER": 5
+      }
+    },
+    "NOMAD|UMBRA": {
+      "together": 8,
+      "togetherWins": 4,
+      "versus": 19,
+      "wins": {
+        "NOMAD": 15,
+        "UMBRA": 4
+      }
+    },
+    "CEDAR|NOMAD": {
+      "together": 2,
+      "togetherWins": 2,
+      "versus": 4,
+      "wins": {
+        "NOMAD": 3,
+        "CEDAR": 1
+      }
+    },
+    "CRULLER|NOMAD": {
+      "together": 25,
+      "togetherWins": 19,
+      "versus": 21,
+      "wins": {
+        "NOMAD": 10,
+        "CRULLER": 11
+      }
+    },
+    "MISO|NOMAD": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "NOMAD": 2,
+        "MISO": 1
+      }
+    },
+    "EMBER|VECTOR": {
+      "together": 14,
+      "togetherWins": 3,
+      "versus": 30,
+      "wins": {
+        "VECTOR": 17,
+        "EMBER": 13
+      }
+    },
+    "UMBRA|VECTOR": {
+      "together": 15,
+      "togetherWins": 5,
+      "versus": 14,
+      "wins": {
+        "VECTOR": 10,
+        "UMBRA": 4
+      }
+    },
+    "CEDAR|VECTOR": {
+      "together": 4,
+      "togetherWins": 1,
+      "versus": 4,
+      "wins": {
+        "VECTOR": 2,
+        "CEDAR": 2
+      }
+    },
+    "CRULLER|VECTOR": {
+      "together": 13,
+      "togetherWins": 8,
+      "versus": 32,
+      "wins": {
+        "VECTOR": 13,
+        "CRULLER": 19
+      }
+    },
+    "MISO|VECTOR": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 2,
+      "wins": {
+        "VECTOR": 2
+      }
+    },
+    "BRACKET|EMBER": {
+      "together": 6,
+      "togetherWins": 2,
+      "versus": 20,
+      "wins": {
+        "BRACKET": 13,
+        "EMBER": 7
+      }
+    },
+    "BRACKET|UMBRA": {
+      "together": 3,
+      "togetherWins": 3,
+      "versus": 16,
+      "wins": {
+        "BRACKET": 13,
+        "UMBRA": 3
+      }
+    },
+    "BRACKET|CEDAR": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "BRACKET": 1
+      }
+    },
+    "BRACKET|CRULLER": {
+      "together": 7,
+      "togetherWins": 5,
+      "versus": 17,
+      "wins": {
+        "BRACKET": 9,
+        "CRULLER": 8
+      }
+    },
+    "BRACKET|MISO": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 3,
+      "wins": {
+        "BRACKET": 3
+      }
+    },
+    "EMBER|KITE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "KITE": 1
+      }
+    },
+    "KITE|UMBRA": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "KITE": 1
+      }
+    },
+    "CEDAR|KITE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "KITE": 1
+      }
+    },
+    "CRULLER|KITE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "KITE": 1
+      }
+    },
+    "KITE|MISO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "KITE": 1
+      }
+    },
+    "DELTA|EMBER": {
+      "together": 20,
+      "togetherWins": 12,
+      "versus": 31,
+      "wins": {
+        "DELTA": 21,
+        "EMBER": 10
+      }
+    },
+    "DELTA|UMBRA": {
+      "together": 15,
+      "togetherWins": 6,
+      "versus": 13,
+      "wins": {
+        "DELTA": 10,
+        "UMBRA": 3
+      }
+    },
+    "CEDAR|DELTA": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "DELTA": 1
+      }
+    },
+    "CRULLER|DELTA": {
+      "together": 27,
+      "togetherWins": 18,
+      "versus": 16,
+      "wins": {
+        "DELTA": 5,
+        "CRULLER": 11
+      }
+    },
+    "DELTA|MISO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "DELTA": 2,
+        "MISO": 1
+      }
+    },
+    "GIZMO|HARBOR": {
+      "together": 19,
+      "togetherWins": 11,
+      "versus": 7,
+      "wins": {
+        "HARBOR": 1,
+        "GIZMO": 6
+      }
+    },
+    "DELTA|GIZMO": {
+      "together": 21,
+      "togetherWins": 16,
+      "versus": 14,
+      "wins": {
+        "DELTA": 7,
+        "GIZMO": 7
+      }
+    },
+    "CEDAR|GIZMO": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "GIZMO|VECTOR": {
+      "together": 14,
+      "togetherWins": 9,
+      "versus": 17,
+      "wins": {
+        "VECTOR": 6,
+        "GIZMO": 11
+      }
+    },
+    "DELTA|HARBOR": {
+      "together": 15,
+      "togetherWins": 9,
+      "versus": 30,
+      "wins": {
+        "DELTA": 18,
+        "HARBOR": 12
+      }
+    },
+    "CEDAR|HARBOR": {
+      "together": 4,
+      "togetherWins": 3,
+      "versus": 3,
+      "wins": {
+        "HARBOR": 3
+      }
+    },
+    "HARBOR|VECTOR": {
+      "together": 19,
+      "togetherWins": 8,
+      "versus": 31,
+      "wins": {
+        "VECTOR": 15,
+        "HARBOR": 16
+      }
+    },
+    "EMBER|VALE": {
+      "together": 11,
+      "togetherWins": 2,
+      "versus": 9,
+      "wins": {
+        "EMBER": 4,
+        "VALE": 5
+      }
+    },
+    "CRULLER|VALE": {
+      "together": 7,
+      "togetherWins": 1,
+      "versus": 14,
+      "wins": {
+        "CRULLER": 9,
+        "VALE": 5
+      }
+    },
+    "UMBRA|VALE": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 8,
+      "wins": {
+        "UMBRA": 4,
+        "VALE": 4
+      }
+    },
+    "NOMAD|VALE": {
+      "together": 13,
+      "togetherWins": 3,
+      "versus": 10,
+      "wins": {
+        "NOMAD": 8,
+        "VALE": 2
+      }
+    },
+    "EMBER|GIZMO": {
+      "together": 6,
+      "togetherWins": 2,
+      "versus": 22,
+      "wins": {
+        "GIZMO": 16,
+        "EMBER": 6
+      }
+    },
+    "GIZMO|VALE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 10,
+      "wins": {
+        "GIZMO": 7,
+        "VALE": 3
+      }
+    },
+    "CRULLER|GIZMO": {
+      "together": 5,
+      "togetherWins": 3,
+      "versus": 12,
+      "wins": {
+        "GIZMO": 6,
+        "CRULLER": 6
+      }
+    },
+    "GIZMO|UMBRA": {
+      "together": 3,
+      "togetherWins": 1,
+      "versus": 14,
+      "wins": {
+        "GIZMO": 11,
+        "UMBRA": 3
+      }
+    },
+    "GIZMO|NOMAD": {
+      "together": 24,
+      "togetherWins": 19,
+      "versus": 9,
+      "wins": {
+        "GIZMO": 3,
+        "NOMAD": 6
+      }
+    },
+    "EMBER|HARBOR": {
+      "together": 17,
+      "togetherWins": 5,
+      "versus": 22,
+      "wins": {
+        "HARBOR": 13,
+        "EMBER": 9
+      }
+    },
+    "HARBOR|VALE": {
+      "together": 13,
+      "togetherWins": 3,
+      "versus": 16,
+      "wins": {
+        "HARBOR": 11,
+        "VALE": 5
+      }
+    },
+    "CRULLER|HARBOR": {
+      "together": 9,
+      "togetherWins": 5,
+      "versus": 28,
+      "wins": {
+        "HARBOR": 12,
+        "CRULLER": 16
+      }
+    },
+    "HARBOR|UMBRA": {
+      "together": 11,
+      "togetherWins": 4,
+      "versus": 13,
+      "wins": {
+        "HARBOR": 8,
+        "UMBRA": 5
+      }
+    },
+    "HARBOR|NOMAD": {
+      "together": 28,
+      "togetherWins": 17,
+      "versus": 17,
+      "wins": {
+        "HARBOR": 5,
+        "NOMAD": 12
+      }
+    },
+    "DELTA|VALE": {
+      "together": 6,
+      "togetherWins": 2,
+      "versus": 17,
+      "wins": {
+        "DELTA": 12,
+        "VALE": 5
+      }
+    },
+    "CEDAR|VALE": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "CEDAR": 2
+      }
+    },
+    "VALE|VECTOR": {
+      "together": 20,
+      "togetherWins": 7,
+      "versus": 10,
+      "wins": {
+        "VECTOR": 8,
+        "VALE": 2
+      }
+    },
+    "BRACKET|HARBOR": {
+      "together": 12,
+      "togetherWins": 8,
+      "versus": 12,
+      "wins": {
+        "BRACKET": 9,
+        "HARBOR": 3
+      }
+    },
+    "MISO|VALE": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "KESTREL|MISO": {
+      "together": 3,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "EMBER|KESTREL": {
+      "together": 24,
+      "togetherWins": 10,
+      "versus": 25,
+      "wins": {
+        "EMBER": 11,
+        "KESTREL": 14
+      }
+    },
+    "KESTREL|VALE": {
+      "together": 16,
+      "togetherWins": 6,
+      "versus": 11,
+      "wins": {
+        "KESTREL": 9,
+        "VALE": 2
+      }
+    },
+    "KESTREL|NOMAD": {
+      "together": 24,
+      "togetherWins": 16,
+      "versus": 45,
+      "wins": {
+        "NOMAD": 32,
+        "KESTREL": 13
+      }
+    },
+    "KESTREL|VECTOR": {
+      "together": 47,
+      "togetherWins": 18,
+      "versus": 22,
+      "wins": {
+        "VECTOR": 12,
+        "KESTREL": 10
+      }
+    },
+    "HARBOR|MISO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "HARBOR": 2,
+        "MISO": 1
+      }
+    },
+    "HARBOR|KESTREL": {
+      "together": 16,
+      "togetherWins": 8,
+      "versus": 30,
+      "wins": {
+        "HARBOR": 16,
+        "KESTREL": 14
+      }
+    },
+    "BRACKET|VALE": {
+      "together": 6,
+      "togetherWins": 4,
+      "versus": 8,
+      "wins": {
+        "BRACKET": 8
+      }
+    },
+    "BRACKET|KESTREL": {
+      "together": 19,
+      "togetherWins": 12,
+      "versus": 16,
+      "wins": {
+        "BRACKET": 13,
+        "KESTREL": 3
+      }
+    },
+    "KESTREL|UMBRA": {
+      "together": 13,
+      "togetherWins": 2,
+      "versus": 17,
+      "wins": {
+        "UMBRA": 8,
+        "KESTREL": 9
+      }
+    },
+    "DELTA|KESTREL": {
+      "together": 37,
+      "togetherWins": 20,
+      "versus": 27,
+      "wins": {
+        "DELTA": 16,
+        "KESTREL": 11
+      }
+    },
+    "DELTA|TIGER": {
+      "together": 2,
+      "togetherWins": 2,
+      "versus": 0,
+      "wins": {}
+    },
+    "TIGER|VECTOR": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "TIGER": 1
+      }
+    },
+    "BRACKET|TIGER": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "TIGER|UMBRA": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "ECHO|HARBOR": {
+      "together": 10,
+      "togetherWins": 3,
+      "versus": 17,
+      "wins": {
+        "HARBOR": 7,
+        "ECHO": 10
+      }
+    },
+    "ECHO|EMBER": {
+      "together": 14,
+      "togetherWins": 5,
+      "versus": 8,
+      "wins": {
+        "EMBER": 5,
+        "ECHO": 3
+      }
+    },
+    "ECHO|NOMAD": {
+      "together": 18,
+      "togetherWins": 9,
+      "versus": 9,
+      "wins": {
+        "NOMAD": 4,
+        "ECHO": 5
+      }
+    },
+    "ECHO|KESTREL": {
+      "together": 8,
+      "togetherWins": 4,
+      "versus": 26,
+      "wins": {
+        "KESTREL": 14,
+        "ECHO": 12
+      }
+    },
+    "HARBOR|TIGER": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "TIGER": 2
+      }
+    },
+    "EMBER|TIGER": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "TIGER": 2
+      }
+    },
+    "ECHO|TIGER": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "TIGER": 2
+      }
+    },
+    "NOMAD|TIGER": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "TIGER": 1
+      }
+    },
+    "KESTREL|TIGER": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "TIGER": 1
+      }
+    },
+    "DELTA|ECHO": {
+      "together": 13,
+      "togetherWins": 7,
+      "versus": 16,
+      "wins": {
+        "DELTA": 10,
+        "ECHO": 6
+      }
+    },
+    "ECHO|VECTOR": {
+      "together": 14,
+      "togetherWins": 7,
+      "versus": 24,
+      "wins": {
+        "VECTOR": 12,
+        "ECHO": 12
+      }
+    },
+    "BRACKET|ECHO": {
+      "together": 11,
+      "togetherWins": 7,
+      "versus": 11,
+      "wins": {
+        "BRACKET": 8,
+        "ECHO": 3
+      }
+    },
+    "ECHO|UMBRA": {
+      "together": 3,
+      "togetherWins": 1,
+      "versus": 11,
+      "wins": {
+        "UMBRA": 4,
+        "ECHO": 7
+      }
+    },
+    "ECHO|GIZMO": {
+      "together": 5,
+      "togetherWins": 1,
+      "versus": 7,
+      "wins": {
+        "ECHO": 4,
+        "GIZMO": 3
+      }
+    },
+    "GIZMO|KESTREL": {
+      "together": 18,
+      "togetherWins": 12,
+      "versus": 15,
+      "wins": {
+        "KESTREL": 6,
+        "GIZMO": 9
+      }
+    },
+    "CRULLER|ECHO": {
+      "together": 13,
+      "togetherWins": 9,
+      "versus": 12,
+      "wins": {
+        "CRULLER": 8,
+        "ECHO": 4
+      }
+    },
+    "CRULLER|KESTREL": {
+      "together": 21,
+      "togetherWins": 13,
+      "versus": 26,
+      "wins": {
+        "CRULLER": 17,
+        "KESTREL": 9
+      }
+    },
+    "BRACKET|GIZMO": {
+      "together": 9,
+      "togetherWins": 7,
+      "versus": 4,
+      "wins": {
+        "BRACKET": 1,
+        "GIZMO": 3
+      }
+    },
+    "EMBER|RIN": {
+      "together": 2,
+      "togetherWins": 2,
+      "versus": 0,
+      "wins": {}
+    },
+    "HARBOR|RIN": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "RIN": 1
+      }
+    },
+    "KESTREL|RIN": {
+      "together": 2,
+      "togetherWins": 2,
+      "versus": 0,
+      "wins": {}
+    },
+    "CRULLER|RIN": {
+      "together": 2,
+      "togetherWins": 2,
+      "versus": 0,
+      "wins": {}
+    },
+    "ECHO|VALE": {
+      "together": 9,
+      "togetherWins": 3,
+      "versus": 9,
+      "wins": {
+        "VALE": 5,
+        "ECHO": 4
+      }
+    },
+    "RIN|VECTOR": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "RIN": 2
+      }
+    },
+    "DELTA|RIN": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "RIN": 1
+      }
+    },
+    "ECHO|RIN": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "RIN": 2
+      }
+    },
+    "RIN|VALE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "RIN": 2
+      }
+    },
+    "NOMAD|RIN": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "RIN": 2
+      }
+    },
+    "CRULLER|ORBIT": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 2,
+      "wins": {
+        "CRULLER": 2
+      }
+    },
+    "DELTA|ORBIT": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 2,
+      "wins": {
+        "DELTA": 2
+      }
+    },
+    "ORBIT|VECTOR": {
+      "together": 3,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "VECTOR": 1
+      }
+    },
+    "KESTREL|ORBIT": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 2,
+      "wins": {
+        "KESTREL": 2
+      }
+    },
+    "HARBOR|ORBIT": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "ORBIT": 1,
+        "HARBOR": 1
+      }
+    },
+    "EMBER|ORBIT": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "ORBIT": 1
+      }
+    },
+    "ORBIT|VALE": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "ORBIT": 1,
+        "VALE": 1
+      }
+    },
+    "ECHO|ORBIT": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "ORBIT": 1,
+        "ECHO": 2
+      }
+    },
+    "NOMAD|ORBIT": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "ORBIT": 1,
+        "NOMAD": 1
+      }
+    },
+    "TIGER|VALE": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "GIZMO|TIGER": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "TIGER": 1
+      }
+    },
+    "BRACKET|ORBIT": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "BRACKET": 2
+      }
+    },
+    "ECHO|MISO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "MISO": 1
+      }
+    },
+    "MISO|ORBIT": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "MISO": 1
+      }
+    },
+    "BRACKET|FLUX": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "FLUX": 1
+      }
+    },
+    "FLUX|NOMAD": {
+      "together": 3,
+      "togetherWins": 3,
+      "versus": 5,
+      "wins": {
+        "NOMAD": 5
+      }
+    },
+    "FLUX|VECTOR": {
+      "together": 6,
+      "togetherWins": 2,
+      "versus": 2,
+      "wins": {
+        "FLUX": 1,
+        "VECTOR": 1
+      }
+    },
+    "FLUX|VALE": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "DELTA|FLUX": {
+      "together": 5,
+      "togetherWins": 2,
+      "versus": 3,
+      "wins": {
+        "FLUX": 1,
+        "DELTA": 2
+      }
+    },
+    "FLUX|HARBOR": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 5,
+      "wins": {
+        "FLUX": 1,
+        "HARBOR": 4
+      }
+    },
+    "FLUX|KESTREL": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 6,
+      "wins": {
+        "FLUX": 3,
+        "KESTREL": 3
+      }
+    },
+    "EMBER|FLUX": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "FLUX": 2,
+        "EMBER": 2
+      }
+    },
+    "FLUX|UMBRA": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "FLUX": 1
+      }
+    },
+    "BIRCH|HARBOR": {
+      "together": 2,
+      "togetherWins": 2,
+      "versus": 2,
+      "wins": {
+        "HARBOR": 2
+      }
+    },
+    "BIRCH|DELTA": {
+      "together": 4,
+      "togetherWins": 2,
+      "versus": 15,
+      "wins": {
+        "DELTA": 9,
+        "BIRCH": 6
+      }
+    },
+    "BIRCH|NOMAD": {
+      "together": 6,
+      "togetherWins": 6,
+      "versus": 13,
+      "wins": {
+        "NOMAD": 11,
+        "BIRCH": 2
+      }
+    },
+    "BIRCH|GIZMO": {
+      "together": 2,
+      "togetherWins": 2,
+      "versus": 6,
+      "wins": {
+        "BIRCH": 2,
+        "GIZMO": 4
+      }
+    },
+    "BIRCH|VECTOR": {
+      "together": 5,
+      "togetherWins": 2,
+      "versus": 9,
+      "wins": {
+        "BIRCH": 6,
+        "VECTOR": 3
+      }
+    },
+    "BIRCH|FLUX": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "BIRCH": 2,
+        "FLUX": 1
+      }
+    },
+    "FLUX|GIZMO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "GIZMO": 3,
+        "FLUX": 1
+      }
+    },
+    "BIRCH|EMBER": {
+      "together": 4,
+      "togetherWins": 4,
+      "versus": 7,
+      "wins": {
+        "BIRCH": 2,
+        "EMBER": 5
+      }
+    },
+    "BIRCH|VALE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "BIRCH": 1
+      }
+    },
+    "BIRCH|KESTREL": {
+      "together": 4,
+      "togetherWins": 1,
+      "versus": 14,
+      "wins": {
+        "BIRCH": 7,
+        "KESTREL": 7
+      }
+    },
+    "MERIDIAN|VECTOR": {
+      "together": 4,
+      "togetherWins": 2,
+      "versus": 4,
+      "wins": {
+        "MERIDIAN": 3,
+        "VECTOR": 1
+      }
+    },
+    "DYNAMO|VECTOR": {
+      "together": 16,
+      "togetherWins": 6,
+      "versus": 17,
+      "wins": {
+        "DYNAMO": 7,
+        "VECTOR": 10
+      }
+    },
+    "KESTREL|MERIDIAN": {
+      "together": 3,
+      "togetherWins": 1,
+      "versus": 12,
+      "wins": {
+        "MERIDIAN": 6,
+        "KESTREL": 6
+      }
+    },
+    "DYNAMO|KESTREL": {
+      "together": 11,
+      "togetherWins": 0,
+      "versus": 21,
+      "wins": {
+        "DYNAMO": 9,
+        "KESTREL": 12
+      }
+    },
+    "BIRCH|MERIDIAN": {
+      "together": 8,
+      "togetherWins": 3,
+      "versus": 1,
+      "wins": {
+        "BIRCH": 1
+      }
+    },
+    "BIRCH|DYNAMO": {
+      "together": 12,
+      "togetherWins": 3,
+      "versus": 6,
+      "wins": {
+        "BIRCH": 4,
+        "DYNAMO": 2
+      }
+    },
+    "DYNAMO|MERIDIAN": {
+      "together": 9,
+      "togetherWins": 1,
+      "versus": 5,
+      "wins": {
+        "DYNAMO": 1,
+        "MERIDIAN": 4
+      }
+    },
+    "CRULLER|FLUX": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "CRULLER": 1
+      }
+    },
+    "BIRCH|CRULLER": {
+      "together": 3,
+      "togetherWins": 3,
+      "versus": 8,
+      "wins": {
+        "CRULLER": 7,
+        "BIRCH": 1
+      }
+    },
+    "DELTA|MERIDIAN": {
+      "together": 3,
+      "togetherWins": 1,
+      "versus": 13,
+      "wins": {
+        "DELTA": 7,
+        "MERIDIAN": 6
+      }
+    },
+    "CRULLER|MERIDIAN": {
+      "together": 5,
+      "togetherWins": 4,
+      "versus": 11,
+      "wins": {
+        "CRULLER": 8,
+        "MERIDIAN": 3
+      }
+    },
+    "HARBOR|MERIDIAN": {
+      "together": 4,
+      "togetherWins": 2,
+      "versus": 4,
+      "wins": {
+        "HARBOR": 3,
+        "MERIDIAN": 1
+      }
+    },
+    "FLUX|MERIDIAN": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "FLUX": 1
+      }
+    },
+    "MERIDIAN|NOMAD": {
+      "together": 5,
+      "togetherWins": 4,
+      "versus": 12,
+      "wins": {
+        "NOMAD": 9,
+        "MERIDIAN": 3
+      }
+    },
+    "DELTA|DYNAMO": {
+      "together": 5,
+      "togetherWins": 1,
+      "versus": 23,
+      "wins": {
+        "DELTA": 15,
+        "DYNAMO": 8
+      }
+    },
+    "CRULLER|DYNAMO": {
+      "together": 8,
+      "togetherWins": 5,
+      "versus": 15,
+      "wins": {
+        "CRULLER": 13,
+        "DYNAMO": 2
+      }
+    },
+    "DYNAMO|HARBOR": {
+      "together": 5,
+      "togetherWins": 2,
+      "versus": 10,
+      "wins": {
+        "HARBOR": 5,
+        "DYNAMO": 5
+      }
+    },
+    "DYNAMO|FLUX": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "FLUX": 1,
+        "DYNAMO": 2
+      }
+    },
+    "DYNAMO|NOMAD": {
+      "together": 10,
+      "togetherWins": 6,
+      "versus": 25,
+      "wins": {
+        "NOMAD": 21,
+        "DYNAMO": 4
+      }
+    },
+    "DYNAMO|EMBER": {
+      "together": 4,
+      "togetherWins": 2,
+      "versus": 13,
+      "wins": {
+        "EMBER": 11,
+        "DYNAMO": 2
+      }
+    },
+    "EMBER|MERIDIAN": {
+      "together": 5,
+      "togetherWins": 4,
+      "versus": 9,
+      "wins": {
+        "EMBER": 8,
+        "MERIDIAN": 1
+      }
+    },
+    "PIVOT|VECTOR": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 5,
+      "wins": {
+        "PIVOT": 3,
+        "VECTOR": 2
+      }
+    },
+    "KESTREL|PIVOT": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 6,
+      "wins": {
+        "PIVOT": 3,
+        "KESTREL": 3
+      }
+    },
+    "DELTA|PIVOT": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 6,
+      "wins": {
+        "PIVOT": 3,
+        "DELTA": 3
+      }
+    },
+    "DYNAMO|PIVOT": {
+      "together": 9,
+      "togetherWins": 3,
+      "versus": 0,
+      "wins": {}
+    },
+    "EMBER|PIVOT": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "EMBER": 4
+      }
+    },
+    "MERIDIAN|PIVOT": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "MERIDIAN": 3
+      }
+    },
+    "NOMAD|PIVOT": {
+      "together": 3,
+      "togetherWins": 2,
+      "versus": 6,
+      "wins": {
+        "NOMAD": 5,
+        "PIVOT": 1
+      }
+    },
+    "CRULLER|PIVOT": {
+      "together": 2,
+      "togetherWins": 2,
+      "versus": 4,
+      "wins": {
+        "CRULLER": 4
+      }
+    },
+    "BIRCH|PIVOT": {
+      "together": 3,
+      "togetherWins": 1,
+      "versus": 6,
+      "wins": {
+        "BIRCH": 4,
+        "PIVOT": 2
+      }
+    },
+    "BIRCH|BRACKET": {
+      "together": 4,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "BIRCH": 1
+      }
+    },
+    "DYNAMO|ECHO": {
+      "together": 10,
+      "togetherWins": 6,
+      "versus": 4,
+      "wins": {
+        "ECHO": 4
+      }
+    },
+    "ECHO|PIVOT": {
+      "together": 3,
+      "togetherWins": 2,
+      "versus": 0,
+      "wins": {}
+    },
+    "BIRCH|ECHO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "ECHO": 2,
+        "BIRCH": 1
+      }
+    },
+    "BRACKET|DYNAMO": {
+      "together": 10,
+      "togetherWins": 4,
+      "versus": 8,
+      "wins": {
+        "DYNAMO": 3,
+        "BRACKET": 5
+      }
+    },
+    "BRACKET|PIVOT": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "PIVOT": 2,
+        "BRACKET": 1
+      }
+    },
+    "GIZMO|PIVOT": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "GIZMO": 1,
+        "PIVOT": 1
+      }
+    },
+    "DYNAMO|GIZMO": {
+      "together": 3,
+      "togetherWins": 2,
+      "versus": 6,
+      "wins": {
+        "GIZMO": 5,
+        "DYNAMO": 1
+      }
+    },
+    "MERIDIAN|UMBRA": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "MERIDIAN": 1
+      }
+    },
+    "BRACKET|MERIDIAN": {
+      "together": 5,
+      "togetherWins": 2,
+      "versus": 2,
+      "wins": {
+        "MERIDIAN": 1,
+        "BRACKET": 1
+      }
+    },
+    "GIZMO|MERIDIAN": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 2,
+      "wins": {
+        "MERIDIAN": 1,
+        "GIZMO": 1
+      }
+    },
+    "DYNAMO|UMBRA": {
+      "together": 5,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "DYNAMO": 2,
+        "UMBRA": 1
+      }
+    },
+    "COMET|DYNAMO": {
+      "together": 8,
+      "togetherWins": 2,
+      "versus": 0,
+      "wins": {}
+    },
+    "AERIAL|COMET": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "BIRCH|COMET": {
+      "together": 7,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "COMET|MERIDIAN": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "AERIAL|DYNAMO": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "AERIAL|BIRCH": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "AERIAL|MERIDIAN": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "COMET|EMBER": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "EMBER": 3
+      }
+    },
+    "COMET|DELTA": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 7,
+      "wins": {
+        "DELTA": 6,
+        "COMET": 1
+      }
+    },
+    "COMET|NOMAD": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 7,
+      "wins": {
+        "NOMAD": 6,
+        "COMET": 1
+      }
+    },
+    "COMET|KESTREL": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 7,
+      "wins": {
+        "KESTREL": 6,
+        "COMET": 1
+      }
+    },
+    "COMET|CRULLER": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "CRULLER": 3
+      }
+    },
+    "AERIAL|EMBER": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "EMBER": 3
+      }
+    },
+    "AERIAL|DELTA": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "DELTA": 3
+      }
+    },
+    "AERIAL|NOMAD": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "NOMAD": 3
+      }
+    },
+    "AERIAL|KESTREL": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "KESTREL": 3
+      }
+    },
+    "AERIAL|CRULLER": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "CRULLER": 3
+      }
+    },
+    "FLUX|PIVOT": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "PIKE|PIVOT": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "COMET|PIVOT": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "BIRCH|PIKE": {
+      "together": 5,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "COMET|PIKE": {
+      "together": 4,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "DYNAMO|PIKE": {
+      "together": 5,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "DELTA|PIKE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 5,
+      "wins": {
+        "DELTA": 4,
+        "PIKE": 1
+      }
+    },
+    "PIKE|VECTOR": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "VECTOR": 3,
+        "PIKE": 1
+      }
+    },
+    "GIZMO|PIKE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 5,
+      "wins": {
+        "GIZMO": 4,
+        "PIKE": 1
+      }
+    },
+    "NOMAD|PIKE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 5,
+      "wins": {
+        "NOMAD": 4,
+        "PIKE": 1
+      }
+    },
+    "KESTREL|PIKE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "KESTREL": 3,
+        "PIKE": 1
+      }
+    },
+    "COMET|VECTOR": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 4,
+      "wins": {
+        "VECTOR": 3,
+        "COMET": 1
+      }
+    },
+    "COMET|GIZMO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "GIZMO": 3,
+        "COMET": 1
+      }
+    },
+    "MOSS|PIKE": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "COMET|MOSS": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "DYNAMO|MOSS": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "BIRCH|MOSS": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "DELTA|MOSS": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "DELTA": 3
+      }
+    },
+    "KESTREL|MOSS": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "KESTREL": 2
+      }
+    },
+    "MOSS|VECTOR": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "VECTOR": 2
+      }
+    },
+    "MOSS|NOMAD": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "NOMAD": 3
+      }
+    },
+    "GIZMO|MOSS": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "GIZMO": 3
+      }
+    },
+    "BRACKET|PIKE": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "BRACKET|MOSS": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "EMBER|PIKE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "EMBER": 1
+      }
+    },
+    "HARBOR|PIKE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "HARBOR": 1
+      }
+    },
+    "EMBER|MOSS": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "EMBER": 1
+      }
+    },
+    "HARBOR|MOSS": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "HARBOR": 1
+      }
+    },
+    "FLUX|TAKO": {
+      "together": 4,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "TAKO|VECTOR": {
+      "together": 5,
+      "togetherWins": 2,
+      "versus": 8,
+      "wins": {
+        "TAKO": 4,
+        "VECTOR": 4
+      }
+    },
+    "KILO|TAKO": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "DELTA|TAKO": {
+      "together": 3,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "FLUX|KILO": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "KILO|VECTOR": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "VECTOR": 1
+      }
+    },
+    "DELTA|KILO": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "DELTA": 1
+      }
+    },
+    "CRIMSON|HARBOR": {
+      "together": 6,
+      "togetherWins": 2,
+      "versus": 3,
+      "wins": {
+        "HARBOR": 2,
+        "CRIMSON": 1
+      }
+    },
+    "CRIMSON|GIZMO": {
+      "together": 5,
+      "togetherWins": 2,
+      "versus": 3,
+      "wins": {
+        "GIZMO": 3
+      }
+    },
+    "CRIMSON|NOMAD": {
+      "together": 4,
+      "togetherWins": 3,
+      "versus": 13,
+      "wins": {
+        "NOMAD": 10,
+        "CRIMSON": 3
+      }
+    },
+    "CRIMSON|KESTREL": {
+      "together": 12,
+      "togetherWins": 4,
+      "versus": 4,
+      "wins": {
+        "CRIMSON": 3,
+        "KESTREL": 1
+      }
+    },
+    "HARBOR|TAKO": {
+      "together": 8,
+      "togetherWins": 3,
+      "versus": 2,
+      "wins": {
+        "HARBOR": 2
+      }
+    },
+    "CRIMSON|TAKO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 5,
+      "wins": {
+        "CRIMSON": 2,
+        "TAKO": 3
+      }
+    },
+    "GIZMO|TAKO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "GIZMO": 2,
+        "TAKO": 1
+      }
+    },
+    "NOMAD|TAKO": {
+      "together": 6,
+      "togetherWins": 5,
+      "versus": 2,
+      "wins": {
+        "NOMAD": 2
+      }
+    },
+    "KESTREL|TAKO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 7,
+      "wins": {
+        "KESTREL": 2,
+        "TAKO": 5
+      }
+    },
+    "CRIMSON|FLUX": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "CRIMSON": 2,
+        "FLUX": 1
+      }
+    },
+    "CRIMSON|VECTOR": {
+      "together": 11,
+      "togetherWins": 5,
+      "versus": 5,
+      "wins": {
+        "CRIMSON": 2,
+        "VECTOR": 3
+      }
+    },
+    "HARBOR|KILO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "HARBOR": 2
+      }
+    },
+    "CRIMSON|KILO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "CRIMSON": 3
+      }
+    },
+    "GIZMO|KILO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "GIZMO": 2
+      }
+    },
+    "KILO|NOMAD": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "NOMAD": 2
+      }
+    },
+    "KESTREL|KILO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "KESTREL": 3
+      }
+    },
+    "CRIMSON|DELTA": {
+      "together": 2,
+      "togetherWins": 2,
+      "versus": 12,
+      "wins": {
+        "CRIMSON": 4,
+        "DELTA": 8
+      }
+    },
+    "BRACKET|CRIMSON": {
+      "together": 9,
+      "togetherWins": 4,
+      "versus": 0,
+      "wins": {}
+    },
+    "CRIMSON|EMBER": {
+      "together": 4,
+      "togetherWins": 0,
+      "versus": 5,
+      "wins": {
+        "EMBER": 5
+      }
+    },
+    "BRACKET|TAKO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "TAKO": 2,
+        "BRACKET": 1
+      }
+    },
+    "EMBER|TAKO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "TAKO": 1
+      }
+    },
+    "CEDAR|ECHO": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "DRIFT|EMBER": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "DRIFT|HARBOR": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "CRULLER|DRIFT": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "DRIFT|KESTREL": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "CEDAR|DRIFT": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "DRIFT": 1
+      }
+    },
+    "CEDAR|KESTREL": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "KESTREL": 1,
+        "CEDAR": 2
+      }
+    },
+    "DRIFT|VECTOR": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "DRIFT": 1
+      }
+    },
+    "BRACKET|DRIFT": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "DRIFT": 1
+      }
+    },
+    "DRIFT|ECHO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "DRIFT": 1
+      }
+    },
+    "DRIFT|VALE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "DRIFT": 1
+      }
+    },
+    "LANTERN|UMBRA": {
+      "together": 6,
+      "togetherWins": 2,
+      "versus": 6,
+      "wins": {
+        "LANTERN": 5,
+        "UMBRA": 1
+      }
+    },
+    "LANTERN|VECTOR": {
+      "together": 7,
+      "togetherWins": 5,
+      "versus": 17,
+      "wins": {
+        "VECTOR": 7,
+        "LANTERN": 10
+      }
+    },
+    "KESTREL|LANTERN": {
+      "together": 10,
+      "togetherWins": 3,
+      "versus": 11,
+      "wins": {
+        "LANTERN": 11
+      }
+    },
+    "LANTERN|NOMAD": {
+      "together": 17,
+      "togetherWins": 14,
+      "versus": 6,
+      "wins": {
+        "NOMAD": 4,
+        "LANTERN": 2
+      }
+    },
+    "CRULLER|LANTERN": {
+      "together": 5,
+      "togetherWins": 4,
+      "versus": 7,
+      "wins": {
+        "LANTERN": 4,
+        "CRULLER": 3
+      }
+    },
+    "DELTA|LANTERN": {
+      "together": 12,
+      "togetherWins": 6,
+      "versus": 2,
+      "wins": {
+        "LANTERN": 1,
+        "DELTA": 1
+      }
+    },
+    "EMBER|LANTERN": {
+      "together": 4,
+      "togetherWins": 3,
+      "versus": 7,
+      "wins": {
+        "LANTERN": 5,
+        "EMBER": 2
+      }
+    },
+    "GIZMO|LANTERN": {
+      "together": 3,
+      "togetherWins": 3,
+      "versus": 3,
+      "wins": {
+        "LANTERN": 1,
+        "GIZMO": 2
+      }
+    },
+    "HARBOR|LANTERN": {
+      "together": 8,
+      "togetherWins": 5,
+      "versus": 6,
+      "wins": {
+        "LANTERN": 4,
+        "HARBOR": 2
+      }
+    },
+    "BRACKET|LANTERN": {
+      "together": 2,
+      "togetherWins": 2,
+      "versus": 11,
+      "wins": {
+        "BRACKET": 6,
+        "LANTERN": 5
+      }
+    },
+    "ECHO|LANTERN": {
+      "together": 4,
+      "togetherWins": 4,
+      "versus": 5,
+      "wins": {
+        "ECHO": 3,
+        "LANTERN": 2
+      }
+    },
+    "DYNAMO|LANTERN": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 16,
+      "wins": {
+        "DYNAMO": 5,
+        "LANTERN": 11
+      }
+    },
+    "CRIMSON|ECHO": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "ECHO": 2,
+        "CRIMSON": 2
+      }
+    },
+    "CRIMSON|LANTERN": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 11,
+      "wins": {
+        "LANTERN": 8,
+        "CRIMSON": 3
+      }
+    },
+    "CRIMSON|UMBRA": {
+      "together": 3,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "CRIMSON": 1
+      }
+    },
+    "CRIMSON|CRULLER": {
+      "together": 2,
+      "togetherWins": 2,
+      "versus": 7,
+      "wins": {
+        "CRIMSON": 2,
+        "CRULLER": 5
+      }
+    },
+    "CRIMSON|DYNAMO": {
+      "together": 6,
+      "togetherWins": 1,
+      "versus": 2,
+      "wins": {
+        "CRIMSON": 2
+      }
+    },
+    "CRIMSON|MERIDIAN": {
+      "together": 4,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "LANTERN|MERIDIAN": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "MERIDIAN": 1,
+        "LANTERN": 3
+      }
+    },
+    "LANTERN|VALE": {
+      "together": 3,
+      "togetherWins": 1,
+      "versus": 3,
+      "wins": {
+        "LANTERN": 3
+      }
+    },
+    "CRIMSON|VALE": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 1,
+      "wins": {
+        "CRIMSON": 1
+      }
+    },
+    "ECHO|MERIDIAN": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "MERIDIAN|VALE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "MERIDIAN": 1
+      }
+    },
+    "DYNAMO|VALE": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "DYNAMO": 2,
+        "VALE": 1
+      }
+    },
+    "HARBOR|NOVA": {
+      "together": 8,
+      "togetherWins": 4,
+      "versus": 0,
+      "wins": {}
+    },
+    "NOVA|TAKO": {
+      "together": 9,
+      "togetherWins": 5,
+      "versus": 0,
+      "wins": {}
+    },
+    "LANTERN|TAKO": {
+      "together": 6,
+      "togetherWins": 4,
+      "versus": 1,
+      "wins": {
+        "LANTERN": 1
+      }
+    },
+    "LANTERN|NOVA": {
+      "together": 6,
+      "togetherWins": 5,
+      "versus": 1,
+      "wins": {
+        "LANTERN": 1
+      }
+    },
+    "NOMAD|NOVA": {
+      "together": 6,
+      "togetherWins": 5,
+      "versus": 0,
+      "wins": {}
+    },
+    "CRULLER|TAKO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 5,
+      "wins": {
+        "TAKO": 3,
+        "CRULLER": 2
+      }
+    },
+    "TAKO|VALE": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "TAKO": 2,
+        "VALE": 1
+      }
+    },
+    "CEDAR|TAKO": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "TAKO": 2
+      }
+    },
+    "CRULLER|NOVA": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 6,
+      "wins": {
+        "NOVA": 4,
+        "CRULLER": 2
+      }
+    },
+    "NOVA|VECTOR": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 8,
+      "wins": {
+        "NOVA": 5,
+        "VECTOR": 3
+      }
+    },
+    "KESTREL|NOVA": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 5,
+      "wins": {
+        "NOVA": 5
+      }
+    },
+    "NOVA|VALE": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "NOVA": 3,
+        "VALE": 1
+      }
+    },
+    "CEDAR|NOVA": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 2,
+      "wins": {
+        "NOVA": 2
+      }
+    },
+    "CEDAR|LANTERN": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 2,
+      "wins": {
+        "LANTERN": 2
+      }
+    },
+    "DYNAMO|NOVA": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 7,
+      "wins": {
+        "NOVA": 4,
+        "DYNAMO": 3
+      }
+    },
+    "CEDAR|DYNAMO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "CEDAR": 1,
+        "DYNAMO": 1
+      }
+    },
+    "DYNAMO|SPARROW": {
+      "together": 7,
+      "togetherWins": 3,
+      "versus": 5,
+      "wins": {
+        "SPARROW": 4,
+        "DYNAMO": 1
+      }
+    },
+    "SPARROW|UMBRA": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "KESTREL|SPARROW": {
+      "together": 3,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "SPARROW": 2,
+        "KESTREL": 2
+      }
+    },
+    "SPARROW|VECTOR": {
+      "together": 9,
+      "togetherWins": 5,
+      "versus": 4,
+      "wins": {
+        "SPARROW": 2,
+        "VECTOR": 2
+      }
+    },
+    "LANTERN|PRISM": {
+      "together": 3,
+      "togetherWins": 3,
+      "versus": 3,
+      "wins": {
+        "LANTERN": 2,
+        "PRISM": 1
+      }
+    },
+    "ECHO|PRISM": {
+      "together": 7,
+      "togetherWins": 4,
+      "versus": 0,
+      "wins": {}
+    },
+    "BRACKET|PRISM": {
+      "together": 4,
+      "togetherWins": 3,
+      "versus": 2,
+      "wins": {
+        "BRACKET": 2
+      }
+    },
+    "NOMAD|PRISM": {
+      "together": 4,
+      "togetherWins": 3,
+      "versus": 3,
+      "wins": {
+        "NOMAD": 2,
+        "PRISM": 1
+      }
+    },
+    "DYNAMO|PRISM": {
+      "together": 7,
+      "togetherWins": 3,
+      "versus": 3,
+      "wins": {
+        "PRISM": 3
+      }
+    },
+    "PRISM|UMBRA": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "PRISM": 3
+      }
+    },
+    "LANTERN|SPARROW": {
+      "together": 3,
+      "togetherWins": 3,
+      "versus": 5,
+      "wins": {
+        "LANTERN": 3,
+        "SPARROW": 2
+      }
+    },
+    "ECHO|SPARROW": {
+      "together": 4,
+      "togetherWins": 2,
+      "versus": 5,
+      "wins": {
+        "ECHO": 4,
+        "SPARROW": 1
+      }
+    },
+    "BRACKET|SPARROW": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 6,
+      "wins": {
+        "BRACKET": 5,
+        "SPARROW": 1
+      }
+    },
+    "NOMAD|SPARROW": {
+      "together": 3,
+      "togetherWins": 2,
+      "versus": 4,
+      "wins": {
+        "NOMAD": 3,
+        "SPARROW": 1
+      }
+    },
+    "PRISM|SPARROW": {
+      "together": 4,
+      "togetherWins": 2,
+      "versus": 7,
+      "wins": {
+        "PRISM": 4,
+        "SPARROW": 3
+      }
+    },
+    "KESTREL|PRISM": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 5,
+      "wins": {
+        "PRISM": 3,
+        "KESTREL": 2
+      }
+    },
+    "PRISM|VECTOR": {
+      "together": 4,
+      "togetherWins": 2,
+      "versus": 7,
+      "wins": {
+        "PRISM": 4,
+        "VECTOR": 3
+      }
+    },
+    "CRULLER|PRISM": {
+      "together": 5,
+      "togetherWins": 3,
+      "versus": 0,
+      "wins": {}
+    },
+    "CRULLER|SPARROW": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 3,
+      "wins": {
+        "CRULLER": 2,
+        "SPARROW": 1
+      }
+    },
+    "SPARROW|TAKO": {
+      "together": 4,
+      "togetherWins": 3,
+      "versus": 4,
+      "wins": {
+        "SPARROW": 4
+      }
+    },
+    "NOVA|SPARROW": {
+      "together": 4,
+      "togetherWins": 3,
+      "versus": 3,
+      "wins": {
+        "SPARROW": 3
+      }
+    },
+    "CRIMSON|PRISM": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "CRIMSON": 2
+      }
+    },
+    "CRIMSON|SPARROW": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "SPARROW": 2,
+        "CRIMSON": 2
+      }
+    },
+    "PRISM|TAKO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 6,
+      "wins": {
+        "TAKO": 3,
+        "PRISM": 3
+      }
+    },
+    "DYNAMO|TAKO": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 7,
+      "wins": {
+        "TAKO": 3,
+        "DYNAMO": 4
+      }
+    },
+    "NOVA|PRISM": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 6,
+      "wins": {
+        "NOVA": 3,
+        "PRISM": 3
+      }
+    },
+    "CRIMSON|NOVA": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "NOVA": 2
+      }
+    },
+    "HARBOR|SPARROW": {
+      "together": 2,
+      "togetherWins": 1,
+      "versus": 4,
+      "wins": {
+        "SPARROW": 4
+      }
+    },
+    "SPARROW|VALE": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 2,
+      "wins": {
+        "SPARROW": 1,
+        "VALE": 1
+      }
+    },
+    "HARBOR|PRISM": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "PRISM": 3,
+        "HARBOR": 1
+      }
+    },
+    "PRISM|VALE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "PRISM": 1,
+        "VALE": 1
+      }
+    },
+    "COMET|SPARROW": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "COMET|PRISM": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "COMET|HARBOR": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "COMET": 1
+      }
+    },
+    "COMET|NOVA": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "COMET": 1
+      }
+    },
+    "CEDAR|COMET": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "COMET": 1
+      }
+    },
+    "CEDAR|SPARROW": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "SPARROW": 1
+      }
+    },
+    "CEDAR|PRISM": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "PRISM": 1
+      }
+    },
+    "COMET|TAKO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "COMET": 1
+      }
+    },
+    "COMET|LANTERN": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "COMET": 1
+      }
+    },
+    "KILO|SPARROW": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "DYNAMO|KILO": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "KILO|PRISM": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "ECHO|KILO": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "DELTA|SPARROW": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "DELTA": 1
+      }
+    },
+    "DELTA|PRISM": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "DELTA": 1
+      }
+    },
+    "BRACKET|KILO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "BRACKET": 1
+      }
+    },
+    "ECHO|TAKO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 4,
+      "wins": {
+        "ECHO": 3,
+        "TAKO": 1
+      }
+    },
+    "BRACKET|NOVA": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "BRACKET": 1,
+        "NOVA": 1
+      }
+    },
+    "ECHO|NOVA": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 3,
+      "wins": {
+        "ECHO": 2,
+        "NOVA": 1
+      }
+    },
+    "HARBOR|SLATE": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "NOVA|SLATE": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "SLATE|TAKO": {
+      "together": 2,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "DYNAMO|SLATE": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "DYNAMO": 1
+      }
+    },
+    "SLATE|SPARROW": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "SPARROW": 2
+      }
+    },
+    "ECHO|SLATE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "ECHO": 2
+      }
+    },
+    "SLATE|VECTOR": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 2,
+      "wins": {
+        "VECTOR": 2
+      }
+    },
+    "SLATE|VALE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "VALE": 1
+      }
+    },
+    "LANTERN|SLATE": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "LANTERN": 1
+      }
+    },
+    "FLUX|LANTERN": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "FLUX|SLATE": {
+      "together": 1,
+      "togetherWins": 0,
+      "versus": 0,
+      "wins": {}
+    },
+    "ECHO|SKYLARK": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "DYNAMO|SKYLARK": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "SKYLARK|VECTOR": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "SKYLARK|SPARROW": {
+      "together": 1,
+      "togetherWins": 1,
+      "versus": 0,
+      "wins": {}
+    },
+    "HARBOR|SKYLARK": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "SKYLARK": 1
+      }
+    },
+    "LANTERN|SKYLARK": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "SKYLARK": 1
+      }
+    },
+    "ECHO|FLUX": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "ECHO": 1
+      }
+    },
+    "FLUX|SPARROW": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "SPARROW": 1
+      }
+    },
+    "FLUX|SKYLARK": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "SKYLARK": 1
+      }
+    },
+    "SKYLARK|SLATE": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "SKYLARK": 1
+      }
+    },
+    "SKYLARK|TAKO": {
+      "together": 0,
+      "togetherWins": 0,
+      "versus": 1,
+      "wins": {
+        "SKYLARK": 1
+      }
+    }
+  },
+  "generatedAt": "2026-08-03T19:40:05.936719+00:00"
 }
