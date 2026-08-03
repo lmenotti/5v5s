@@ -141,6 +141,208 @@ a { color: inherit; }
     line-height: 1.7;
 }
 
+.view-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.view-tab {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: var(--bg-elevated);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.65rem 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.view-tab:hover {
+    color: var(--text);
+    border-color: var(--line-strong);
+}
+
+.view-tab.active {
+    color: var(--gold);
+    border-color: var(--gold);
+    background: var(--gold-dim);
+}
+
+.league-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.strip-stat {
+    padding: 0.75rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+}
+
+.strip-stat .label {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+}
+
+.strip-stat .value {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.view-panel[hidden] { display: none !important; }
+
+.rankings-panel,
+.duos-panel {
+    padding: 1.25rem;
+    animation: fadeUp 0.45s ease;
+}
+
+.meta-panel {
+    animation: fadeUp 0.45s ease;
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 1rem;
+}
+
+.meta-grid .panel {
+    padding: 1.25rem;
+}
+
+.panel-note {
+    margin: 0.35rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+}
+
+.table-wrap {
+    overflow: auto;
+}
+
+.rank-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+}
+
+.rank-table th,
+.rank-table td {
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+}
+
+.rank-table th {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.rank-table tbody tr {
+    transition: background 0.15s;
+}
+
+.rank-table tbody tr:hover {
+    background: var(--bg-panel-hover);
+}
+
+.rank-table tbody tr.is-active {
+    background: var(--gold-dim);
+}
+
+.rank-table .rank-num {
+    color: var(--text-muted);
+    width: 2rem;
+}
+
+.rank-table .player-cell {
+    font-family: var(--font-display);
+    font-weight: 600;
+}
+
+.rank-table .wr-cell {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.duo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.duo-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem 1rem;
+    align-items: center;
+    padding: 1rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+}
+
+.duo-names {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.duo-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.duo-wr {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--cyan);
+    text-align: right;
+}
+
+.duo-wr small {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.duo-meter {
+    grid-column: 1 / -1;
+    height: 3px;
+    background: var(--line);
+}
+
+.duo-meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--cyan), var(--gold));
+}
+
 .player-rail-wrap {
     margin-bottom: 2rem;
     border-top: 1px solid var(--line-strong);
@@ -470,6 +672,14 @@ a { color: inherit; }
 }
 
 @media (max-width: 960px) {
+    .league-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .meta-grid {
+        grid-template-columns: 1fr;
+    }
+
     .dashboard {
         grid-template-columns: 1fr;
         grid-template-areas:

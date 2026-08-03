@@ -1,0 +1,1226 @@
+{
+  "leaderboard": [
+    {
+      "name": "VECTOR",
+      "matches": 77,
+      "winRate": 48.05,
+      "kda": 2.58,
+      "dpm": 659.2,
+      "wins": 37,
+      "losses": 40,
+      "rank": 1
+    },
+    {
+      "name": "KESTREL",
+      "matches": 76,
+      "winRate": 44.74,
+      "kda": 2.53,
+      "dpm": 556.0,
+      "wins": 34,
+      "losses": 42,
+      "rank": 2
+    },
+    {
+      "name": "NOMAD",
+      "matches": 75,
+      "winRate": 69.33,
+      "kda": 4.1,
+      "dpm": 832.9,
+      "wins": 52,
+      "losses": 23,
+      "rank": 3
+    },
+    {
+      "name": "DELTA",
+      "matches": 69,
+      "winRate": 59.42,
+      "kda": 3.34,
+      "dpm": 700.8,
+      "wins": 41,
+      "losses": 28,
+      "rank": 4
+    },
+    {
+      "name": "HARBOR",
+      "matches": 56,
+      "winRate": 48.21,
+      "kda": 4.06,
+      "dpm": 452.9,
+      "wins": 27,
+      "losses": 29,
+      "rank": 5
+    },
+    {
+      "name": "CRULLER",
+      "matches": 54,
+      "winRate": 62.96,
+      "kda": 2.79,
+      "dpm": 533.5,
+      "wins": 34,
+      "losses": 20,
+      "rank": 6
+    },
+    {
+      "name": "EMBER",
+      "matches": 54,
+      "winRate": 44.44,
+      "kda": 2.83,
+      "dpm": 739.6,
+      "wins": 24,
+      "losses": 30,
+      "rank": 7
+    },
+    {
+      "name": "BRACKET",
+      "matches": 41,
+      "winRate": 65.85,
+      "kda": 3.52,
+      "dpm": 463.6,
+      "wins": 27,
+      "losses": 14,
+      "rank": 8
+    },
+    {
+      "name": "DYNAMO",
+      "matches": 41,
+      "winRate": 31.71,
+      "kda": 2.25,
+      "dpm": 788.9,
+      "wins": 13,
+      "losses": 28,
+      "rank": 9
+    },
+    {
+      "name": "ECHO",
+      "matches": 38,
+      "winRate": 50.0,
+      "kda": 2.81,
+      "dpm": 291.8,
+      "wins": 19,
+      "losses": 19,
+      "rank": 10
+    },
+    {
+      "name": "GIZMO",
+      "matches": 35,
+      "winRate": 65.71,
+      "kda": 2.18,
+      "dpm": 552.0,
+      "wins": 23,
+      "losses": 12,
+      "rank": 11
+    },
+    {
+      "name": "UMBRA",
+      "matches": 32,
+      "winRate": 31.25,
+      "kda": 1.31,
+      "dpm": 311.1,
+      "wins": 10,
+      "losses": 22,
+      "rank": 12
+    },
+    {
+      "name": "VALE",
+      "matches": 30,
+      "winRate": 30.0,
+      "kda": 1.19,
+      "dpm": 340.4,
+      "wins": 9,
+      "losses": 21,
+      "rank": 13
+    },
+    {
+      "name": "LANTERN",
+      "matches": 26,
+      "winRate": 65.38,
+      "kda": 3.65,
+      "dpm": 868.2,
+      "wins": 17,
+      "losses": 9,
+      "rank": 14
+    },
+    {
+      "name": "BIRCH",
+      "matches": 19,
+      "winRate": 42.11,
+      "kda": 1.99,
+      "dpm": 636.0,
+      "wins": 8,
+      "losses": 11,
+      "rank": 15
+    },
+    {
+      "name": "CRIMSON",
+      "matches": 18,
+      "winRate": 38.89,
+      "kda": 2.77,
+      "dpm": 881.5,
+      "wins": 7,
+      "losses": 11,
+      "rank": 16
+    },
+    {
+      "name": "MERIDIAN",
+      "matches": 17,
+      "winRate": 41.18,
+      "kda": 2.44,
+      "dpm": 541.7,
+      "wins": 7,
+      "losses": 10,
+      "rank": 17
+    },
+    {
+      "name": "SPARROW",
+      "matches": 13,
+      "winRate": 53.85,
+      "kda": 2.72,
+      "dpm": 795.2,
+      "wins": 7,
+      "losses": 6,
+      "rank": 18
+    },
+    {
+      "name": "TAKO",
+      "matches": 13,
+      "winRate": 46.15,
+      "kda": 2.01,
+      "dpm": 281.9,
+      "wins": 6,
+      "losses": 7,
+      "rank": 19
+    },
+    {
+      "name": "PRISM",
+      "matches": 11,
+      "winRate": 54.55,
+      "kda": 1.75,
+      "dpm": 598.7,
+      "wins": 6,
+      "losses": 5,
+      "rank": 20
+    },
+    {
+      "name": "NOVA",
+      "matches": 10,
+      "winRate": 60.0,
+      "kda": 1.94,
+      "dpm": 721.8,
+      "wins": 6,
+      "losses": 4,
+      "rank": 21
+    },
+    {
+      "name": "FLUX",
+      "matches": 9,
+      "winRate": 33.33,
+      "kda": 1.02,
+      "dpm": 537.3,
+      "wins": 3,
+      "losses": 6,
+      "rank": 22
+    },
+    {
+      "name": "PIVOT",
+      "matches": 9,
+      "winRate": 33.33,
+      "kda": 2.05,
+      "dpm": 501.6,
+      "wins": 3,
+      "losses": 6,
+      "rank": 23
+    },
+    {
+      "name": "CEDAR",
+      "matches": 8,
+      "winRate": 37.5,
+      "kda": 2.32,
+      "dpm": 451.4,
+      "wins": 3,
+      "losses": 5,
+      "rank": 24
+    },
+    {
+      "name": "COMET",
+      "matches": 8,
+      "winRate": 25.0,
+      "kda": 2.32,
+      "dpm": 737.4,
+      "wins": 2,
+      "losses": 6,
+      "rank": 25
+    },
+    {
+      "name": "PIKE",
+      "matches": 5,
+      "winRate": 20.0,
+      "kda": 2.14,
+      "dpm": 737.2,
+      "wins": 1,
+      "losses": 4,
+      "rank": 26
+    },
+    {
+      "name": "MISO",
+      "matches": 4,
+      "winRate": 25.0,
+      "kda": 1.7,
+      "dpm": 295.7,
+      "wins": 1,
+      "losses": 3,
+      "rank": 27
+    },
+    {
+      "name": "ORBIT",
+      "matches": 4,
+      "winRate": 25.0,
+      "kda": 0.47,
+      "dpm": 298.9,
+      "wins": 1,
+      "losses": 3,
+      "rank": 28
+    },
+    {
+      "name": "AERIAL",
+      "matches": 3,
+      "winRate": 0.0,
+      "kda": 0.69,
+      "dpm": 200.0,
+      "wins": 0,
+      "losses": 3,
+      "rank": 29
+    },
+    {
+      "name": "MOSS",
+      "matches": 3,
+      "winRate": 0.0,
+      "kda": 1.89,
+      "dpm": 426.3,
+      "wins": 0,
+      "losses": 3,
+      "rank": 30
+    },
+    {
+      "name": "KILO",
+      "matches": 3,
+      "winRate": 0.0,
+      "kda": 1.1,
+      "dpm": 409.5,
+      "wins": 0,
+      "losses": 3,
+      "rank": 31
+    },
+    {
+      "name": "TIGER",
+      "matches": 2,
+      "winRate": 100.0,
+      "kda": 7.25,
+      "dpm": 308.3,
+      "wins": 2,
+      "losses": 0,
+      "rank": 32
+    },
+    {
+      "name": "RIN",
+      "matches": 2,
+      "winRate": 100.0,
+      "kda": 10.33,
+      "dpm": 441.0,
+      "wins": 2,
+      "losses": 0,
+      "rank": 33
+    },
+    {
+      "name": "SLATE",
+      "matches": 2,
+      "winRate": 0.0,
+      "kda": 0.62,
+      "dpm": 585.6,
+      "wins": 0,
+      "losses": 2,
+      "rank": 34
+    },
+    {
+      "name": "KITE",
+      "matches": 1,
+      "winRate": 100.0,
+      "kda": 1.0,
+      "dpm": 205.8,
+      "wins": 1,
+      "losses": 0,
+      "rank": 35
+    },
+    {
+      "name": "DRIFT",
+      "matches": 1,
+      "winRate": 100.0,
+      "kda": 0.4,
+      "dpm": 109.3,
+      "wins": 1,
+      "losses": 0,
+      "rank": 36
+    },
+    {
+      "name": "SKYLARK",
+      "matches": 1,
+      "winRate": 100.0,
+      "kda": 3.25,
+      "dpm": 734.6,
+      "wins": 1,
+      "losses": 0,
+      "rank": 37
+    }
+  ],
+  "championMeta": [
+    {
+      "champion": "Seraphine",
+      "games": 22,
+      "winRate": 59.1
+    },
+    {
+      "champion": "Nautilus",
+      "games": 20,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Yasuo",
+      "games": 17,
+      "winRate": 64.7
+    },
+    {
+      "champion": "Zac",
+      "games": 17,
+      "winRate": 58.8
+    },
+    {
+      "champion": "Veigar",
+      "games": 16,
+      "winRate": 31.2
+    },
+    {
+      "champion": "JarvanIV",
+      "games": 16,
+      "winRate": 56.2
+    },
+    {
+      "champion": "Nami",
+      "games": 16,
+      "winRate": 56.2
+    },
+    {
+      "champion": "Yone",
+      "games": 16,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Xerath",
+      "games": 15,
+      "winRate": 46.7
+    },
+    {
+      "champion": "Hwei",
+      "games": 15,
+      "winRate": 80.0
+    },
+    {
+      "champion": "Ezreal",
+      "games": 14,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Malphite",
+      "games": 14,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Jayce",
+      "games": 14,
+      "winRate": 57.1
+    },
+    {
+      "champion": "Corki",
+      "games": 13,
+      "winRate": 53.8
+    },
+    {
+      "champion": "Ashe",
+      "games": 12,
+      "winRate": 58.3
+    },
+    {
+      "champion": "Caitlyn",
+      "games": 12,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Aphelios",
+      "games": 12,
+      "winRate": 16.7
+    },
+    {
+      "champion": "Lillia",
+      "games": 11,
+      "winRate": 36.4
+    },
+    {
+      "champion": "Ornn",
+      "games": 11,
+      "winRate": 45.5
+    },
+    {
+      "champion": "Darius",
+      "games": 11,
+      "winRate": 36.4
+    },
+    {
+      "champion": "Smolder",
+      "games": 11,
+      "winRate": 54.5
+    },
+    {
+      "champion": "Morgana",
+      "games": 10,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Lux",
+      "games": 10,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Vex",
+      "games": 10,
+      "winRate": 40.0
+    },
+    {
+      "champion": "Lulu",
+      "games": 10,
+      "winRate": 60.0
+    },
+    {
+      "champion": "Jinx",
+      "games": 10,
+      "winRate": 70.0
+    },
+    {
+      "champion": "KSante",
+      "games": 10,
+      "winRate": 80.0
+    },
+    {
+      "champion": "Zeri",
+      "games": 9,
+      "winRate": 55.6
+    },
+    {
+      "champion": "Varus",
+      "games": 9,
+      "winRate": 88.9
+    },
+    {
+      "champion": "Twitch",
+      "games": 9,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Evelynn",
+      "games": 9,
+      "winRate": 66.7
+    },
+    {
+      "champion": "Neeko",
+      "games": 9,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Irelia",
+      "games": 9,
+      "winRate": 44.4
+    },
+    {
+      "champion": "Pantheon",
+      "games": 8,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Kaisa",
+      "games": 8,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Sejuani",
+      "games": 8,
+      "winRate": 62.5
+    },
+    {
+      "champion": "Jax",
+      "games": 8,
+      "winRate": 12.5
+    },
+    {
+      "champion": "Swain",
+      "games": 8,
+      "winRate": 75.0
+    },
+    {
+      "champion": "LeeSin",
+      "games": 8,
+      "winRate": 37.5
+    },
+    {
+      "champion": "FiddleSticks",
+      "games": 7,
+      "winRate": 14.3
+    },
+    {
+      "champion": "Brand",
+      "games": 7,
+      "winRate": 57.1
+    },
+    {
+      "champion": "Ahri",
+      "games": 7,
+      "winRate": 42.9
+    },
+    {
+      "champion": "Aatrox",
+      "games": 7,
+      "winRate": 71.4
+    },
+    {
+      "champion": "Shyvana",
+      "games": 7,
+      "winRate": 28.6
+    },
+    {
+      "champion": "Viktor",
+      "games": 7,
+      "winRate": 42.9
+    },
+    {
+      "champion": "Senna",
+      "games": 7,
+      "winRate": 57.1
+    },
+    {
+      "champion": "Garen",
+      "games": 6,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Alistar",
+      "games": 6,
+      "winRate": 66.7
+    },
+    {
+      "champion": "Riven",
+      "games": 6,
+      "winRate": 66.7
+    },
+    {
+      "champion": "Syndra",
+      "games": 6,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Maokai",
+      "games": 6,
+      "winRate": 66.7
+    },
+    {
+      "champion": "Janna",
+      "games": 6,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Rell",
+      "games": 6,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Rakan",
+      "games": 6,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Anivia",
+      "games": 6,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Graves",
+      "games": 6,
+      "winRate": 83.3
+    },
+    {
+      "champion": "Kayn",
+      "games": 6,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Katarina",
+      "games": 5,
+      "winRate": 20.0
+    },
+    {
+      "champion": "Fiora",
+      "games": 5,
+      "winRate": 20.0
+    },
+    {
+      "champion": "Vayne",
+      "games": 5,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Thresh",
+      "games": 5,
+      "winRate": 40.0
+    },
+    {
+      "champion": "Chogath",
+      "games": 5,
+      "winRate": 20.0
+    },
+    {
+      "champion": "Shen",
+      "games": 5,
+      "winRate": 40.0
+    },
+    {
+      "champion": "Ivern",
+      "games": 5,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Olaf",
+      "games": 5,
+      "winRate": 60.0
+    },
+    {
+      "champion": "Azir",
+      "games": 5,
+      "winRate": 60.0
+    },
+    {
+      "champion": "Xayah",
+      "games": 5,
+      "winRate": 80.0
+    },
+    {
+      "champion": "Annie",
+      "games": 5,
+      "winRate": 40.0
+    },
+    {
+      "champion": "Yorick",
+      "games": 5,
+      "winRate": 60.0
+    },
+    {
+      "champion": "Milio",
+      "games": 5,
+      "winRate": 40.0
+    },
+    {
+      "champion": "Pyke",
+      "games": 5,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Zed",
+      "games": 5,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Viego",
+      "games": 5,
+      "winRate": 20.0
+    },
+    {
+      "champion": "Draven",
+      "games": 5,
+      "winRate": 40.0
+    },
+    {
+      "champion": "Kayle",
+      "games": 5,
+      "winRate": 40.0
+    },
+    {
+      "champion": "Poppy",
+      "games": 5,
+      "winRate": 60.0
+    },
+    {
+      "champion": "Diana",
+      "games": 5,
+      "winRate": 40.0
+    },
+    {
+      "champion": "Sion",
+      "games": 4,
+      "winRate": 75.0
+    },
+    {
+      "champion": "Sylas",
+      "games": 4,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Karma",
+      "games": 4,
+      "winRate": 25.0
+    },
+    {
+      "champion": "Ryze",
+      "games": 4,
+      "winRate": 50.0
+    },
+    {
+      "champion": "XinZhao",
+      "games": 4,
+      "winRate": 75.0
+    },
+    {
+      "champion": "Galio",
+      "games": 4,
+      "winRate": 0.0
+    },
+    {
+      "champion": "MonkeyKing",
+      "games": 4,
+      "winRate": 25.0
+    },
+    {
+      "champion": "Kindred",
+      "games": 4,
+      "winRate": 25.0
+    },
+    {
+      "champion": "Tristana",
+      "games": 4,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Gwen",
+      "games": 4,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Amumu",
+      "games": 4,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Illaoi",
+      "games": 4,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Vladimir",
+      "games": 4,
+      "winRate": 75.0
+    },
+    {
+      "champion": "Taliyah",
+      "games": 4,
+      "winRate": 25.0
+    },
+    {
+      "champion": "Nunu",
+      "games": 4,
+      "winRate": 50.0
+    },
+    {
+      "champion": "KogMaw",
+      "games": 4,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Briar",
+      "games": 4,
+      "winRate": 25.0
+    },
+    {
+      "champion": "Orianna",
+      "games": 4,
+      "winRate": 25.0
+    },
+    {
+      "champion": "Gragas",
+      "games": 4,
+      "winRate": 75.0
+    },
+    {
+      "champion": "Teemo",
+      "games": 3,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Zoe",
+      "games": 3,
+      "winRate": 66.7
+    },
+    {
+      "champion": "Hecarim",
+      "games": 3,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Udyr",
+      "games": 3,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Sivir",
+      "games": 3,
+      "winRate": 66.7
+    },
+    {
+      "champion": "Trundle",
+      "games": 3,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Vi",
+      "games": 3,
+      "winRate": 33.3
+    },
+    {
+      "champion": "MissFortune",
+      "games": 3,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Talon",
+      "games": 3,
+      "winRate": 33.3
+    },
+    {
+      "champion": "DrMundo",
+      "games": 3,
+      "winRate": 33.3
+    },
+    {
+      "champion": "AurelionSol",
+      "games": 3,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Ekko",
+      "games": 3,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Belveth",
+      "games": 3,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Samira",
+      "games": 3,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Gnar",
+      "games": 3,
+      "winRate": 66.7
+    },
+    {
+      "champion": "Kassadin",
+      "games": 3,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Mordekaiser",
+      "games": 3,
+      "winRate": 66.7
+    },
+    {
+      "champion": "Jhin",
+      "games": 3,
+      "winRate": 66.7
+    },
+    {
+      "champion": "Lucian",
+      "games": 3,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Nocturne",
+      "games": 3,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Karthus",
+      "games": 3,
+      "winRate": 33.3
+    },
+    {
+      "champion": "Skarner",
+      "games": 3,
+      "winRate": 100.0
+    },
+    {
+      "champion": "RekSai",
+      "games": 2,
+      "winRate": 100.0
+    },
+    {
+      "champion": "TahmKench",
+      "games": 2,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Nasus",
+      "games": 2,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Blitzcrank",
+      "games": 2,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Heimerdinger",
+      "games": 2,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Renekton",
+      "games": 2,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Leona",
+      "games": 2,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Rumble",
+      "games": 2,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Kalista",
+      "games": 2,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Nidalee",
+      "games": 2,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Bard",
+      "games": 2,
+      "winRate": 50.0
+    },
+    {
+      "champion": "Shaco",
+      "games": 2,
+      "winRate": 100.0
+    },
+    {
+      "champion": "TwistedFate",
+      "games": 2,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Naafiri",
+      "games": 2,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Warwick",
+      "games": 1,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Zilean",
+      "games": 1,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Sett",
+      "games": 1,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Velkoz",
+      "games": 1,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Gangplank",
+      "games": 1,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Yuumi",
+      "games": 1,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Soraka",
+      "games": 1,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Akali",
+      "games": 1,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Sona",
+      "games": 1,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Rengar",
+      "games": 1,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Rammus",
+      "games": 1,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Renata",
+      "games": 1,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Cassiopeia",
+      "games": 1,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Volibear",
+      "games": 1,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Camille",
+      "games": 1,
+      "winRate": 100.0
+    },
+    {
+      "champion": "MasterYi",
+      "games": 1,
+      "winRate": 0.0
+    },
+    {
+      "champion": "Quinn",
+      "games": 1,
+      "winRate": 100.0
+    },
+    {
+      "champion": "Malzahar",
+      "games": 1,
+      "winRate": 0.0
+    }
+  ],
+  "duos": [
+    {
+      "playerA": "BIRCH",
+      "playerB": "NOMAD",
+      "games": 6,
+      "winRate": 100.0
+    },
+    {
+      "playerA": "NOMAD",
+      "playerB": "TAKO",
+      "games": 6,
+      "winRate": 83.3
+    },
+    {
+      "playerA": "LANTERN",
+      "playerB": "NOVA",
+      "games": 6,
+      "winRate": 83.3
+    },
+    {
+      "playerA": "NOMAD",
+      "playerB": "NOVA",
+      "games": 6,
+      "winRate": 83.3
+    },
+    {
+      "playerA": "LANTERN",
+      "playerB": "NOMAD",
+      "games": 17,
+      "winRate": 82.4
+    },
+    {
+      "playerA": "BRACKET",
+      "playerB": "VECTOR",
+      "games": 20,
+      "winRate": 80.0
+    },
+    {
+      "playerA": "BRACKET",
+      "playerB": "NOMAD",
+      "games": 15,
+      "winRate": 80.0
+    },
+    {
+      "playerA": "EMBER",
+      "playerB": "MERIDIAN",
+      "games": 5,
+      "winRate": 80.0
+    },
+    {
+      "playerA": "MERIDIAN",
+      "playerB": "NOMAD",
+      "games": 5,
+      "winRate": 80.0
+    },
+    {
+      "playerA": "CRULLER",
+      "playerB": "MERIDIAN",
+      "games": 5,
+      "winRate": 80.0
+    },
+    {
+      "playerA": "CRULLER",
+      "playerB": "LANTERN",
+      "games": 5,
+      "winRate": 80.0
+    },
+    {
+      "playerA": "GIZMO",
+      "playerB": "NOMAD",
+      "games": 24,
+      "winRate": 79.2
+    },
+    {
+      "playerA": "BRACKET",
+      "playerB": "DELTA",
+      "games": 14,
+      "winRate": 78.6
+    },
+    {
+      "playerA": "DELTA",
+      "playerB": "NOMAD",
+      "games": 32,
+      "winRate": 78.1
+    },
+    {
+      "playerA": "BRACKET",
+      "playerB": "GIZMO",
+      "games": 9,
+      "winRate": 77.8
+    }
+  ],
+  "totals": {
+    "matches": 87,
+    "players": 37,
+    "totalKills": 4324,
+    "totalDamage": 16718502,
+    "avgGameMinutes": 32.2
+  },
+  "generatedAt": "2026-08-03T19:34:22.270194+00:00"
+}

@@ -31,7 +31,16 @@
             <p class="lede">Win rates, match history, champions, and teammates — pulled from 87 recorded 5v5s.</p>
         </section>
 
-        <section class="player-rail-wrap">
+        <nav class="view-nav" id="viewNav" aria-label="Sections" hidden>
+            <button type="button" class="view-tab active" data-view="profile">profile</button>
+            <button type="button" class="view-tab" data-view="rankings">rankings</button>
+            <button type="button" class="view-tab" data-view="meta">meta</button>
+            <button type="button" class="view-tab" data-view="duos">duos</button>
+        </nav>
+
+        <section class="league-strip panel" id="leagueStrip" hidden></section>
+
+        <section class="player-rail-wrap view-profile-only" id="playerRailWrap">
             <div class="rail-label">
                 <span>01</span>
                 <span>select summoner</span>
@@ -47,7 +56,7 @@
 
         <div class="empty-state" id="emptyState" hidden>No player data available.</div>
 
-        <div class="dashboard" id="dashboard" hidden>
+        <div class="dashboard view-panel view-profile-only" id="dashboard" hidden>
             <section class="hero-panel panel">
                 <div class="hero-top">
                     <div>
@@ -104,6 +113,57 @@
                 <ul class="bar-list" id="teammateList"></ul>
             </section>
         </div>
+
+        <section class="view-panel panel rankings-panel" id="rankingsPanel" hidden>
+            <div class="panel-head">
+                <p class="panel-tag">league · standings</p>
+                <h3>full rankings</h3>
+            </div>
+            <div class="table-wrap">
+                <table class="rank-table" id="rankTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>player</th>
+                            <th>games</th>
+                            <th>record</th>
+                            <th>wr</th>
+                            <th>kda</th>
+                            <th>dpm</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="view-panel meta-panel" id="metaPanel" hidden>
+            <div class="meta-grid">
+                <section class="panel">
+                    <div class="panel-head">
+                        <p class="panel-tag">league · volume</p>
+                        <h3>at a glance</h3>
+                    </div>
+                    <dl class="spec-list" id="metaTotals"></dl>
+                </section>
+                <section class="panel">
+                    <div class="panel-head">
+                        <p class="panel-tag">league · picks</p>
+                        <h3>champion meta</h3>
+                    </div>
+                    <ul class="bar-list" id="metaChamps"></ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="view-panel panel duos-panel" id="duosPanel" hidden>
+            <div class="panel-head">
+                <p class="panel-tag">league · synergy</p>
+                <h3>strongest duos</h3>
+                <p class="panel-note">Pairs with 5+ games together, sorted by win rate.</p>
+            </div>
+            <ul class="duo-list" id="duoList"></ul>
+        </section>
     </main>
 
     <footer class="site-footer">
