@@ -32,20 +32,20 @@ The **data layer is solid** (87 clean match files). The **delivery layer** (auto
 ```
 LoL .rofl replays
     │
-    ├─► [Manual: ReplayBook GUI] ──► json_files/*.json  ◄── production pipeline
-    │
-    └─► [Attempted: RoflBatchExporter] ──► raw ROFL JSON (different schema, unused)
+    ├─► scripts/import_replays.py ──► json_files/*.json  ◄── primary
+    ├─► [ReplayBook GUI] ────────────► json_files/*.json  ◄── manual alternative
+    └─► [RoflBatchExporter .NET] ────► json_files/*.json  ◄── optional
 
 json_files/*.json
     │
     ├─► scripts/build_stats.py ──► docs/data/players.json + stats.txt
     │
     ├─► docs/index.html          (GitHub Pages dashboard)
-    ├─► 5v5_public_parser.ipynb  (legacy; use build_stats.py instead)
-    └─► panda.ipynb                (exploratory pandas analysis)
+    ├─► scripts/analyze_*.py     (CLI analysis)
+    └─► notebooks/legacy/        (archived exploration)
 ```
 
-**Actual pipeline today:** replays are converted to JSON manually with ReplayBook, then committed to `json_files/`. All downstream consumers read those files.
+**Actual pipeline today:** import replays with `scripts/import_replays.py` (or ReplayBook manually), commit to `json_files/`, then run `scripts/build_stats.py`.
 
 The C# batch exporter uses roflxd and serializes the raw ROFL object — not the flat `{ matchId, participants[] }` shape the stats code expects. It was never integrated into the main pipeline.
 
@@ -164,15 +164,34 @@ Tracked for future work:
    - Changes: `docs/index.html` owner fix, fetch scoped to `json_files/`, KDA zero-death guard, `.nojekyll` added
 2. **Unify the pipeline** — one Python script: `json_files/` → aggregated stats → regenerate `stats.txt` + static JSON for the site ✅ *Done Aug 3, 2026* (`scripts/build_stats.py`)
 3. **Replace GitHub API fetching in the browser** — precompute `docs/data/players.json` at build time ✅ *Done Aug 3, 2026* (dashboard loads `data/players.json`)
-4. **Decide on replay ingestion** — stick with ReplayBook, or finish roflxd integration with a schema transform
-5. **Consolidate notebooks** into scripts with `requirements.txt`
-6. **Fix portability** — relative paths, remove Windows-specific absolute paths
+4. **Decide on replay ingestion** — stick with ReplayBook, or finish roflxd integration with a schema transform ✅ *Done Aug 3, 2026*
+   - Primary: `scripts/import_replays.py` (Python ROFL/ROFL2 extractor)
+   - Secondary: ReplayBook GUI, `RoflBatchExporter/` (.NET, portable CLI)
+   - See `docs/REPLAY_INGESTION.md`
+5. **Consolidate notebooks** into scripts with `requirements.txt` ✅ *Done Aug 3, 2026*
+   - Notebooks archived to `notebooks/legacy/`
+   - Analysis scripts: `analyze_teammates.py`, `analyze_champion.py`, `analyze_roles.py`
+   - Shared module: `scripts/match_data.py`
+6. **Fix portability** — relative paths, remove Windows-specific absolute paths ✅ *Done Aug 3, 2026*
+   - All scripts use repo-relative paths via `Path(__file__)`
+   - `RoflBatchExporter` uses `ProjectReference` + CLI args (no hardcoded paths)
+   - Duplicate vendored C# model copies removed from exporter project
 
 ---
 
 ## Verification Commands
 
 ```bash
+# Import replays
+python3 scripts/import_replays.py /path/to/Replays --rebuild-stats
+
+# Regenerate stats after adding matches
+python3 scripts/build_stats.py
+
+# Analysis
+python3 scripts/analyze_teammates.py
+python3 scripts/analyze_champion.py Zac
+
 # Confirm Pages site is live
 curl -sL -o /dev/null -w "%{http_code}\n" https://lmenotti.github.io/5v5s/
 

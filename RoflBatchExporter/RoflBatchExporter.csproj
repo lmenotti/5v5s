@@ -4,28 +4,11 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <RootNamespace>RoflBatchExporter</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\ReplayReader.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\ReplayReaderOptions.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\IReplay.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\ParseResult.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\ROFL.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\ROFL2.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\Rofl\Chunk.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\Rofl\ChunkHeader.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\Rofl\Lengths.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\Rofl\Metadata.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\Rofl\PayloadHeader.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\Rofl\PlayerStats.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\Rofl2\Metadata2.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Models\Rofl2\PlayerStats2.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Readers\Rofl2Reader.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Readers\RoflReader.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Utilities\ScientificNotationConverter.cs" />
-    <Compile Include="C:\Users\Luca\Documents\GitHub\5v5s\lib\roflxd.cs-master\Rofl.Extract.Data\Utilities\StreamExtensions.cs" />
+    <ProjectReference Include="..\lib\roflxd.cs-master\Rofl.Extract.Data\Rofl.Extract.Data.csproj" />
   </ItemGroup>
 
 </Project>
-

@@ -1,45 +1,121 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 using Fraxiinus.Rofl.Extract.Data.Models;
+using Fraxiinus.Rofl.Extract.Data.Models.Rofl;
 using Fraxiinus.Rofl.Extract.Data.Readers;
 
-class RoflBatchExporter
+class Program
 {
-    public static async Task Main(string[] args)
+    static async Task<int> Main(string[] args)
     {
-        // Directory containing .rofl files
-        string inputDirectory = @"C:\Users\Luca\Documents\League of Legends\Replays";
-        // Output directory for JSON files
-        string outputDirectory = @"C:\Users\Luca\Documents\GitHub\5v5s\test_json_files";
-
-        if (!Directory.Exists(outputDirectory))
+        if (args.Length == 0 || args.Contains("--help") || args.Contains("-h"))
         {
-            Directory.CreateDirectory(outputDirectory);
+            PrintUsage();
+            return args.Length == 0 ? 1 : 0;
         }
 
-        var roflFiles = Directory.GetFiles(inputDirectory, "*.rofl");
-        var options = new ReplayReaderOptions { LoadPayload = true }; // Customize options as needed
+        var inputDirectory = Path.GetFullPath(args[0]);
+        var outputDirectory = args.Length > 1
+            ? Path.GetFullPath(args[1])
+            : Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "json_files"));
+        var overwrite = args.Contains("--overwrite");
 
-        foreach (var roflFile in roflFiles)
+        if (!Directory.Exists(inputDirectory))
         {
+            Console.Error.WriteLine($"Input directory not found: {inputDirectory}");
+            return 1;
+        }
+
+        Directory.CreateDirectory(outputDirectory);
+        var options = new ReplayReaderOptions { LoadPayload = false };
+        var jsonOptions = new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+        };
+
+        var imported = 0;
+        var skipped = 0;
+
+        foreach (var roflFile in Directory.GetFiles(inputDirectory, "*.rofl"))
+        {
+            var outputFilePath = Path.Combine(outputDirectory, Path.GetFileNameWithoutExtension(roflFile) + ".json");
+            if (File.Exists(outputFilePath) && !overwrite)
+            {
+                skipped++;
+                continue;
+            }
+
             try
             {
-                // Load the .rofl file
-                ROFL replay = await RoflReader.LoadAsync(roflFile, options);
-                
-                // Define the output file path
-                string outputFilePath = Path.Combine(outputDirectory, 
-                    Path.GetFileNameWithoutExtension(roflFile) + ".json");
-                
-                // Convert and save as JSON
-                await replay.ToJsonFile(new FileInfo(roflFile), outputFilePath);
-                Console.WriteLine($"Successfully converted: {roflFile} to {outputFilePath}");
+                var payload = await ExtractMatchPayload(roflFile, options);
+                await File.WriteAllTextAsync(outputFilePath, JsonSerializer.Serialize(payload, jsonOptions));
+                Console.WriteLine($"Imported {Path.GetFileName(roflFile)} -> {Path.GetFileName(outputFilePath)}");
+                imported++;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error processing {roflFile}: {ex.Message}");
+                Console.Error.WriteLine($"Error processing {roflFile}: {ex.Message}");
             }
         }
+
+        Console.WriteLine($"Imported {imported} replays, skipped {skipped} existing files");
+        return 0;
+    }
+
+    static void PrintUsage()
+    {
+        Console.WriteLine("Usage: RoflBatchExporter <input-dir> [output-dir] [--overwrite]");
+        Console.WriteLine();
+        Console.WriteLine("  input-dir   Directory containing .rofl replay files");
+        Console.WriteLine("  output-dir  Destination for match JSON (default: repo json_files/)");
+        Console.WriteLine("  --overwrite Replace existing JSON files");
+        Console.WriteLine();
+        Console.WriteLine("Prefer scripts/import_replays.py when Python is available.");
+    }
+
+    static async Task<object> ExtractMatchPayload(string roflFile, ReplayReaderOptions options)
+    {
+        await using var stream = File.OpenRead(roflFile);
+        var signature = new byte[6];
+        await stream.ReadExactlyAsync(signature);
+
+        if (signature.SequenceEqual(ROFL.Signature))
+        {
+            stream.Seek(0, SeekOrigin.Begin);
+            var replay = await RoflReader.LoadAsync(stream, options);
+            return BuildPayload(Path.GetFileNameWithoutExtension(roflFile), replay.Metadata!);
+        }
+
+        if (signature.SequenceEqual(ROFL2.Signature))
+        {
+            stream.Seek(0, SeekOrigin.Begin);
+            var replay = await Rofl2Reader.LoadAsync(stream, options);
+            return BuildPayload(Path.GetFileNameWithoutExtension(roflFile), replay.Metadata!);
+        }
+
+        throw new InvalidOperationException("Unsupported replay format");
+    }
+
+    static object BuildPayload(string matchId, Metadata metadata)
+    {
+        return new
+        {
+            matchId,
+            gameDuration = metadata.GameLength,
+            gameVersion = metadata.GameVersion,
+            participants = metadata.PlayerStatistics,
+        };
+    }
+
+    static object BuildPayload(string matchId, Fraxiinus.Rofl.Extract.Data.Models.Rofl2.Metadata2 metadata)
+    {
+        return new
+        {
+            matchId,
+            gameDuration = metadata.GameLength,
+            gameVersion = metadata.GameVersion,
+            participants = metadata.PlayerStatistics,
+        };
     }
 }

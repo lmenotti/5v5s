@@ -1,0 +1,5 @@
+# Optional dependencies for legacy notebooks in notebooks/legacy/.
+# Core scripts under scripts/ use Python 3 stdlib only.
+
+pandas>=2.0
+requests>=2.31
