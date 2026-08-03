@@ -36,6 +36,7 @@
         <nav class="view-nav" id="viewNav" aria-label="Sections" hidden>
             <button type="button" class="view-tab active" data-view="profile">profile</button>
             <button type="button" class="view-tab" data-view="compare">compare</button>
+            <button type="button" class="view-tab" data-view="draft">draft</button>
             <button type="button" class="view-tab" data-view="rankings">rankings</button>
             <button type="button" class="view-tab" data-view="records">records</button>
             <button type="button" class="view-tab" data-view="meta">meta</button>
@@ -150,6 +151,44 @@
                 </div>
                 <ul class="tag-list" id="compareShared"></ul>
             </section>
+        </section>
+
+        <section class="view-panel panel draft-panel" id="draftPanel" hidden>
+            <div class="panel-head">
+                <p class="panel-tag">league · what-if</p>
+                <h3>team draft simulator</h3>
+                <p class="panel-note">Pick five per side. Estimates win rate from individual stats plus duo synergy from shared game history.</p>
+            </div>
+
+            <div class="draft-layout">
+                <div class="draft-team team-a" id="draftTeamA">
+                    <div class="draft-team-head">
+                        <h4>blue side</h4>
+                        <button type="button" class="draft-btn" data-clear="a">clear</button>
+                    </div>
+                    <div class="draft-slots" id="draftSlotsA"></div>
+                    <div class="draft-actions">
+                        <button type="button" class="draft-btn primary" data-autofill="a">auto-fill</button>
+                    </div>
+                </div>
+                <div class="draft-vs">vs</div>
+                <div class="draft-team team-b" id="draftTeamB">
+                    <div class="draft-team-head">
+                        <h4>red side</h4>
+                        <button type="button" class="draft-btn" data-clear="b">clear</button>
+                    </div>
+                    <div class="draft-slots" id="draftSlotsB"></div>
+                    <div class="draft-actions">
+                        <button type="button" class="draft-btn primary" data-autofill="b">auto-fill</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="draft-simulate-wrap">
+                <button type="button" class="draft-simulate" id="draftSimulate" disabled>simulate matchup</button>
+            </div>
+
+            <div class="draft-results" id="draftResults" hidden></div>
         </section>
 
         <section class="view-panel panel records-panel" id="recordsPanel" hidden>

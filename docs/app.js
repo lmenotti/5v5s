@@ -169,6 +169,9 @@ function setView(view) {
     } else if (view === 'compare') {
         document.getElementById('comparePanel').hidden = false;
         renderCompare();
+    } else if (view === 'draft') {
+        document.getElementById('draftPanel').hidden = false;
+        updateDraftSimulateButton();
     } else if (view === 'rankings') {
         document.getElementById('rankingsPanel').hidden = false;
         renderRankings();
@@ -201,19 +204,19 @@ function populateCompareSelects() {
     selectB.onchange = rerender;
 }
 
-function compareMetric(label, valueA, valueB, higherBetter = true) {
+function compareMetric(key, label, valueA, valueB, higherBetter = true) {
     let winner = 'tie';
     if (valueA !== valueB) {
         winner = higherBetter
             ? (valueA > valueB ? 'left' : 'right')
             : (valueA < valueB ? 'left' : 'right');
     }
-    return { label, valueA, valueB, winner };
+    return { key, label, valueA, valueB, winner };
 }
 
 function formatCompareValue(key, value) {
-    if (key === 'winRate') return `${value.toFixed(1)}%`;
-    if (key === 'kda') return value.toFixed(2);
+    if (key === 'winRate') return `${Number(value).toFixed(1)}%`;
+    if (key === 'kda') return Number(value).toFixed(2);
     if (key === 'dpm') return Math.round(value).toLocaleString();
     if (key === 'matches') return String(value);
     return String(value);
@@ -242,13 +245,13 @@ function renderCompare() {
     `;
 
     const metrics = [
-        compareMetric('win rate', statsA.WinRate, statsB.WinRate),
-        compareMetric('kda', statsA.kda, statsB.kda),
-        compareMetric('dpm', statsA.dpm, statsB.dpm),
-        compareMetric('games', statsA.matches, statsB.matches),
-        compareMetric('kills', statsA.kills, statsB.kills),
-        compareMetric('deaths', statsA.deaths, statsB.deaths, false),
-        compareMetric('assists', statsA.assists, statsB.assists),
+        compareMetric('winRate', 'win rate', statsA.WinRate, statsB.WinRate),
+        compareMetric('kda', 'kda', statsA.kda, statsB.kda),
+        compareMetric('dpm', 'dpm', statsA.dpm, statsB.dpm),
+        compareMetric('matches', 'games', statsA.matches, statsB.matches),
+        compareMetric('kills', 'kills', statsA.kills, statsB.kills),
+        compareMetric('deaths', 'deaths', statsA.deaths, statsB.deaths, false),
+        compareMetric('assists', 'assists', statsA.assists, statsB.assists),
     ];
 
     document.getElementById('compareGrid').innerHTML = metrics
@@ -257,9 +260,9 @@ function renderCompare() {
             const rightClass = metric.winner === 'right' ? 'win' : '';
             return `
                 <div class="compare-row">
-                    <div class="compare-value left ${leftClass}">${formatCompareValue(metric.label, metric.valueA)}</div>
+                    <div class="compare-value left ${leftClass}">${formatCompareValue(metric.key, metric.valueA)}</div>
                     <div class="compare-label">${metric.label}</div>
-                    <div class="compare-value right ${rightClass}">${formatCompareValue(metric.label, metric.valueB)}</div>
+                    <div class="compare-value right ${rightClass}">${formatCompareValue(metric.key, metric.valueB)}</div>
                 </div>
             `;
         })
@@ -293,6 +296,295 @@ function animateRecordCards() {
         { threshold: 0.35 }
     );
     cards.forEach((card) => observer.observe(card));
+}
+
+function leagueAvgWinRate() {
+    if (!leagueData?.leaderboard?.length) return 50;
+    const totalGames = leagueData.leaderboard.reduce((sum, row) => sum + row.matches, 0);
+    const weighted = leagueData.leaderboard.reduce((sum, row) => sum + row.winRate * row.matches, 0);
+    return totalGames ? weighted / totalGames : 50;
+}
+
+function pairSynergy(nameA, nameB, leagueAvg) {
+    const h2h = getHeadToHead(nameA, nameB);
+    if (!h2h || h2h.together < 2) {
+        return { boost: 0, games: 0, wr: null };
+    }
+    const wr = (h2h.togetherWins / h2h.together) * 100;
+    const confidence = Math.min(h2h.together / 12, 1);
+    const boost = (wr - leagueAvg) * confidence * 0.35;
+    return { boost, games: h2h.together, wr };
+}
+
+function analyzeTeam(players) {
+    const filled = players.filter(Boolean);
+    if (!filled.length) {
+        return null;
+    }
+
+    const leagueAvg = leagueAvgWinRate();
+    const weights = filled.map((name) => Math.sqrt(playerStats[name].matches));
+    const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+    const baseWr = filled.reduce(
+        (sum, name, index) => sum + playerStats[name].WinRate * weights[index],
+        0
+    ) / totalWeight;
+
+    let synergyTotal = 0;
+    const synergyPairs = [];
+    for (let i = 0; i < filled.length; i += 1) {
+        for (let j = i + 1; j < filled.length; j += 1) {
+            const synergy = pairSynergy(filled[i], filled[j], leagueAvg);
+            if (synergy.games >= 2) {
+                synergyTotal += synergy.boost;
+                synergyPairs.push({
+                    a: filled[i],
+                    b: filled[j],
+                    ...synergy,
+                });
+            }
+        }
+    }
+
+    synergyPairs.sort((a, b) => Math.abs(b.boost) - Math.abs(a.boost));
+
+    const projectedWr = Math.max(5, Math.min(95, baseWr + synergyTotal));
+    const impactScore = filled.reduce((sum, name) => {
+        const stats = playerStats[name];
+        const wrNorm = stats.WinRate / 100;
+        const kdaNorm = Math.min(stats.kda / 5, 1);
+        const dpmNorm = Math.min(stats.dpm / 1200, 1);
+        return sum + wrNorm * 0.5 + kdaNorm * 0.25 + dpmNorm * 0.25;
+    }, 0) / filled.length;
+
+    return {
+        players: filled,
+        baseWr,
+        synergyTotal,
+        projectedWr,
+        impactScore,
+        synergyPairs: synergyPairs.slice(0, 4),
+        leagueAvg,
+    };
+}
+
+function winProbability(scoreA, scoreB) {
+    const diff = scoreA - scoreB;
+    return 1 / (1 + Math.exp(-diff / 8));
+}
+
+function projectPlayerStats(name, teamWinProb) {
+    const stats = playerStats[name];
+    const perfMult = 0.88 + teamWinProb * 0.24;
+    return {
+        kda: stats.kda * perfMult,
+        dpm: stats.dpm * perfMult,
+    };
+}
+
+const DRAFT_SIZE = 5;
+let draftTeams = { a: Array(DRAFT_SIZE).fill(''), b: Array(DRAFT_SIZE).fill('') };
+
+function draftSelectedPlayers(excludeTeam = null, excludeIndex = -1) {
+    const selected = new Set();
+    ['a', 'b'].forEach((teamKey) => {
+        draftTeams[teamKey].forEach((name, index) => {
+            if (!name) return;
+            if (teamKey === excludeTeam && index === excludeIndex) return;
+            selected.add(name);
+        });
+    });
+    return selected;
+}
+
+function buildDraftOptions(teamKey, slotIndex) {
+    const selected = draftSelectedPlayers(teamKey, slotIndex);
+    const current = draftTeams[teamKey][slotIndex];
+    const options = ['<option value="">— pick player —</option>'];
+    sortedPlayerNames.forEach((name) => {
+        if (selected.has(name) && name !== current) return;
+        const stats = playerStats[name];
+        const selectedAttr = name === current ? ' selected' : '';
+        options.push(
+            `<option value="${name}"${selectedAttr}>${name} · ${stats.WinRate.toFixed(1)}% · ${stats.matches}g</option>`
+        );
+    });
+    return options.join('');
+}
+
+function renderDraftSlots() {
+    ['a', 'b'].forEach((teamKey) => {
+        const container = document.getElementById(`draftSlots${teamKey.toUpperCase()}`);
+        container.innerHTML = draftTeams[teamKey]
+            .map(
+                (_, index) => `
+                    <div class="draft-slot">
+                        <span class="draft-slot-num">${String(index + 1).padStart(2, '0')}</span>
+                        <select class="draft-select" data-team="${teamKey}" data-slot="${index}">
+                            ${buildDraftOptions(teamKey, index)}
+                        </select>
+                    </div>
+                `
+            )
+            .join('');
+
+        container.querySelectorAll('.draft-select').forEach((select) => {
+            select.addEventListener('change', () => {
+                const team = select.dataset.team;
+                const slot = Number(select.dataset.slot);
+                draftTeams[team][slot] = select.value;
+                renderDraftSlots();
+                updateDraftSimulateButton();
+                document.getElementById('draftResults').hidden = true;
+            });
+        });
+    });
+}
+
+function updateDraftSimulateButton() {
+    const teamA = draftTeams.a.filter(Boolean);
+    const teamB = draftTeams.b.filter(Boolean);
+    document.getElementById('draftSimulate').disabled = teamA.length < 5 || teamB.length < 5;
+}
+
+function autofillDraftTeam(teamKey) {
+    const otherKey = teamKey === 'a' ? 'b' : 'a';
+    const taken = new Set(draftTeams[otherKey].filter(Boolean));
+    const pool = leagueData.leaderboard
+        .map((row) => row.name)
+        .filter((name) => playerStats[name] && !taken.has(name));
+
+    if (pool.length < DRAFT_SIZE) {
+        sortedPlayerNames.forEach((name) => {
+            if (pool.length >= DRAFT_SIZE) return;
+            if (!taken.has(name) && !pool.includes(name)) {
+                pool.push(name);
+            }
+        });
+    }
+
+    draftTeams[teamKey] = pool.slice(0, DRAFT_SIZE);
+    while (draftTeams[teamKey].length < DRAFT_SIZE) {
+        draftTeams[teamKey].push('');
+    }
+    renderDraftSlots();
+    updateDraftSimulateButton();
+    document.getElementById('draftResults').hidden = true;
+}
+
+function clearDraftTeam(teamKey) {
+    draftTeams[teamKey] = Array(DRAFT_SIZE).fill('');
+    renderDraftSlots();
+    updateDraftSimulateButton();
+    document.getElementById('draftResults').hidden = true;
+}
+
+function renderSynergyList(pairs) {
+    if (!pairs.length) {
+        return '<li>No duo history on this roster yet — estimate uses solo win rates only.</li>';
+    }
+    return pairs
+        .map((pair) => {
+            const sign = pair.boost >= 0 ? 'positive' : 'negative';
+            const delta = pair.boost >= 0 ? `+${pair.boost.toFixed(1)}` : pair.boost.toFixed(1);
+            return `<li class="${sign}">${pair.a} + ${pair.b} · ${pair.wr.toFixed(1)}% over ${pair.games}g (${delta}%)</li>`;
+        })
+        .join('');
+}
+
+function renderDraftProjections(teamLabel, teamKey, players, teamWinProb) {
+    const className = teamKey === 'a' ? 'team-a' : 'team-b';
+    const rows = players
+        .map((name) => {
+            const projected = projectPlayerStats(name, teamWinProb);
+            return `
+                <div class="draft-proj-row">
+                    <span class="name">${name}</span>
+                    <span class="stat">kda <strong>${projected.kda.toFixed(2)}</strong></span>
+                    <span class="stat">dpm <strong>${Math.round(projected.dpm).toLocaleString()}</strong></span>
+                </div>
+            `;
+        })
+        .join('');
+
+    return `
+        <div class="draft-proj-team ${className}">
+            <h5>${teamLabel}</h5>
+            ${rows}
+        </div>
+    `;
+}
+
+function simulateDraft() {
+    const teamA = analyzeTeam(draftTeams.a);
+    const teamB = analyzeTeam(draftTeams.b);
+    if (!teamA || !teamB) return;
+
+    const probA = winProbability(teamA.projectedWr, teamB.projectedWr);
+    const probB = 1 - probA;
+    const pctA = probA * 100;
+    const pctB = probB * 100;
+
+    const results = document.getElementById('draftResults');
+    results.hidden = false;
+    results.innerHTML = `
+        <section class="draft-matchup panel">
+            <div class="draft-matchup-head">
+                <h4>matchup forecast</h4>
+                <span class="panel-note">Model blends weighted win rate + duo synergy from shared games.</span>
+            </div>
+            <div class="draft-prob-bar">
+                <div class="draft-prob-fill-a" style="width: ${pctA}%"></div>
+                <div class="draft-prob-fill-b" style="width: ${pctB}%"></div>
+            </div>
+            <div class="draft-prob-labels">
+                <span class="team-a-label">blue ${pctA.toFixed(1)}%</span>
+                <span class="team-b-label">red ${pctB.toFixed(1)}%</span>
+            </div>
+        </section>
+
+        <div class="draft-breakdown">
+            <div class="draft-stat-block">
+                <span class="label">blue projected wr</span>
+                <span class="value">${teamA.projectedWr.toFixed(1)}%</span>
+                <div class="detail">Base ${teamA.baseWr.toFixed(1)}% · synergy ${teamA.synergyTotal >= 0 ? '+' : ''}${teamA.synergyTotal.toFixed(1)}%</div>
+                <ul class="draft-synergy-list">${renderSynergyList(teamA.synergyPairs)}</ul>
+            </div>
+            <div class="draft-stat-block">
+                <span class="label">red projected wr</span>
+                <span class="value">${teamB.projectedWr.toFixed(1)}%</span>
+                <div class="detail">Base ${teamB.baseWr.toFixed(1)}% · synergy ${teamB.synergyTotal >= 0 ? '+' : ''}${teamB.synergyTotal.toFixed(1)}%</div>
+                <ul class="draft-synergy-list">${renderSynergyList(teamB.synergyPairs)}</ul>
+            </div>
+        </div>
+
+        <section class="draft-projections panel">
+            <div class="panel-head compact">
+                <p class="panel-tag">projected box score</p>
+                <h3>if this game happened</h3>
+                <p class="panel-note">KDA and DPM scaled by expected team win chance — rough vibe check, not prophecy.</p>
+            </div>
+            <div class="draft-proj-grid">
+                ${renderDraftProjections('blue side', 'a', teamA.players, probA)}
+                ${renderDraftProjections('red side', 'b', teamB.players, probB)}
+            </div>
+        </section>
+    `;
+}
+
+function setupDraftPanel() {
+    renderDraftSlots();
+    updateDraftSimulateButton();
+
+    document.getElementById('draftSimulate').addEventListener('click', simulateDraft);
+
+    document.querySelectorAll('[data-autofill]').forEach((button) => {
+        button.addEventListener('click', () => autofillDraftTeam(button.dataset.autofill));
+    });
+
+    document.querySelectorAll('[data-clear]').forEach((button) => {
+        button.addEventListener('click', () => clearDraftTeam(button.dataset.clear));
+    });
 }
 
 function renderRecords() {
@@ -523,6 +815,7 @@ async function initialize() {
 
         buildPlayerRail();
         populateCompareSelects();
+        setupDraftPanel();
         renderPlayer(sortedPlayerNames[0]);
     } catch (error) {
         console.error(error);

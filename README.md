@@ -8,7 +8,7 @@ Stats tracker for custom League of Legends 5v5 games with friends.
 
 GitHub Pages serves `docs/index.html`, which loads precomputed stats from `docs/data/players.json` and `docs/data/league.json`.
 
-Dashboard tabs: **Profile** (recent form sparkline), **Rankings**, **Meta**, **Duos**, **Compare** (side-by-side + head-to-head), and **Records** (single-game highs, streaks, pentas).
+Dashboard tabs: **Profile**, **Compare**, **Draft** (team simulator), **Rankings**, **Meta**, **Duos**, and **Records**.
 
 ## Quick start
 
