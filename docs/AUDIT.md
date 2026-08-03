@@ -1,0 +1,195 @@
+# 5v5s Project Audit
+
+**Audit date:** August 3, 2026  
+**Repository:** [lmenotti/5v5s](https://github.com/lmenotti/5v5s)  
+**Live site:** [https://lmenotti.github.io/5v5s/](https://lmenotti.github.io/5v5s/)
+
+---
+
+## Executive Summary
+
+5v5s is a stats tracker for a private League of Legends custom 5v5 friend group. The project converts match replays to JSON, aggregates player statistics, and displays them via a static web dashboard on GitHub Pages.
+
+The **data layer is solid** (87 clean match files). The **delivery layer** (automation, deduplicated code, reliable public URL) needs work. This audit was performed as part of a revisit to modernize the project.
+
+---
+
+## Goals
+
+| Goal | Evidence |
+|------|----------|
+| Track custom 5v5 match history | 87 JSON files in `json_files/`, each with 10 participants |
+| Player leaderboards | Win rate, KDA, kills, DPM, CSPM in `docs/index.html` and notebooks |
+| Handle summoner name changes | `player_aliases` maps across HTML and notebooks (e.g. `RaVe B00ST` → `Bryant`) |
+| Teammate and champion analysis | `panda.ipynb`, `5v5_public_parser.ipynb` |
+| Public sharing | GitHub repo + GitHub Pages dashboard |
+| Automate replay → JSON (attempted) | `RoflBatchExporter/` + vendored `lib/roflxd.cs-master/` |
+
+---
+
+## Architecture
+
+```
+LoL .rofl replays
+    │
+    ├─► [Manual: ReplayBook GUI] ──► json_files/*.json  ◄── production pipeline
+    │
+    └─► [Attempted: RoflBatchExporter] ──► raw ROFL JSON (different schema, unused)
+
+json_files/*.json
+    │
+    ├─► docs/index.html          (GitHub Pages dashboard)
+    ├─► 5v5_public_parser.ipynb  → stats.txt
+    └─► panda.ipynb                (exploratory pandas analysis)
+```
+
+**Actual pipeline today:** replays are converted to JSON manually with ReplayBook, then committed to `json_files/`. All downstream consumers read those files.
+
+The C# batch exporter uses roflxd and serializes the raw ROFL object — not the flat `{ matchId, participants[] }` shape the stats code expects. It was never integrated into the main pipeline.
+
+---
+
+## Components
+
+### Data corpus — `json_files/` ✅
+
+| Metric | Value |
+|--------|-------|
+| Match files | 87 |
+| Player-rows | 870 |
+| Unique summoner names | 41 |
+| Patch span | 10.12 (2020) → 14.4 (2024) |
+| Schema consistency | 100% — every file has exactly 10 participants |
+
+Top players by games (after alias normalization): IbelieveMeYou (77), nigeriacoc (76), TylerToTheT212 (75).
+
+### Web dashboard — `docs/index.html` ⚠️
+
+Single-page Bootstrap app that:
+
+- Fetches JSON via the GitHub Contents API
+- Aggregates per-player stats with a 6-hour localStorage cache
+- Shows win rate, KDA, DPM, CSPM, champions played, teammates
+
+**Finding:** GitHub Pages was configured correctly (`/docs` on `main`, status: built), but appeared broken for two reasons:
+
+1. **Wrong username in URLs** — repo owner is `lmenotti`, but code referenced `lucamenotti`. The site is live at **`https://lmenotti.github.io/5v5s/`**; `lucamenotti.github.io` returns 404.
+2. **Inefficient API usage** — the dashboard fetched the entire repo tree instead of listing `json_files/` directly.
+
+Both issues were fixed on August 3, 2026.
+
+### Notebooks
+
+| Notebook | Purpose | Status |
+|----------|---------|--------|
+| `5v5_public_parser.ipynb` | Fetch from GitHub → print stats → write `stats.txt` | Works |
+| `panda.ipynb` | Pandas exploration: filter low-game players, teammate pairs, champion WR | Partially broken — hardcoded Windows path, some cells error |
+| `5v5_private_parser.ipynb` | Local-file variant | Broken — incomplete stub |
+
+### C# tooling — `RoflBatchExporter/` + `lib/roflxd.cs-master/` ❌
+
+- Vendored roflxd.cs ROFL parser (third-party, includes benchmarks/tests)
+- Hardcoded Windows paths in `Program.cs` and `.csproj`
+- Output format ≠ ReplayBook JSON format
+- Requires .NET SDK; not portable as-is
+
+### Artifacts
+
+- `stats.txt` — stale snapshot (generated when corpus was smaller; e.g. adostraa listed at 60 games, now 69)
+- No `requirements.txt`, no CI, no automated tests for Python/JS
+
+---
+
+## Data Quality Notes
+
+- **`WIN` field values:** `Win`, `Fail`, `LeaverFail` — non-`Win` values are treated as losses (reasonable default, undocumented)
+- **KDA edge case:** zero-death games can produce division issues in the HTML aggregator
+- **CSPM heuristic:** support players filtered by CS/min > 2 threshold
+- **Alias drift:** alias maps differ slightly between HTML and notebooks (e.g. HTML includes `Chris` aliases, notebooks do not)
+
+---
+
+## Timeline
+
+| Period | Activity |
+|--------|----------|
+| Jun–Jul 2024 | Initial corpus (42+ matches), first parser notebook, JSON uploads |
+| Jul–Aug 2024 | Web dashboard iterations, teammate percentages, DPM/CSPM |
+| Oct 2024 | Cache + refresh button, CSPM support adjustment |
+| Aug 2026 | Project revisit, audit, GitHub Pages fix |
+
+Contributors: Luca (`lmenotti`), ZachUCSD (`panda.ipynb`), Kyle Vo (match uploads).
+
+---
+
+## What Works
+
+1. Core JSON data is clean and usable
+2. Stat aggregation logic is reasonable (aliases, win/loss, KDA, teammates, champions)
+3. Rich per-match data (~150+ stat fields per player)
+4. GitHub Pages deployment pipeline is functional when using the correct URL
+
+## What's Broken or Fragile
+
+| Issue | Impact |
+|-------|--------|
+| Wrong GitHub username in code/docs (`lucamenotti` vs `lmenotti`) | 404 at old URL; API calls use stale owner |
+| Manual replay pipeline | Every new match requires ReplayBook + manual JSON commit |
+| Duplicated logic | Same aliases/stats in HTML + 2 notebooks — already drifting |
+| Stale `stats.txt` | Misleading if treated as current |
+| Hardcoded paths | Notebooks/C# won't run on another machine without edits |
+| GitHub API rate limits | Unauthenticated browser fetches (~60/hr) degrade UX |
+| RoflBatchExporter | Wrong output schema, non-portable, not integrated |
+
+---
+
+## AI-Era Project Characteristics
+
+Typical of a 2024 AI-assisted prototype:
+
+- Reached a working MVP quickly (JSON + notebook + HTML)
+- Left rough edges (duplicated code, hardcoded paths, parallel unfinished approaches)
+- Exploration prioritized over engineering (`panda.ipynb` has useful ideas but isn't productionized)
+
+---
+
+## Spruce-Up Priorities
+
+Tracked for future work:
+
+1. **Fix GitHub Pages** — correct owner username, verify `/docs` deployment, document live URL ✅ *Fixed Aug 3, 2026*
+   - Root cause: repo owner is `lmenotti`, but code/docs referenced `lucamenotti` (404 at wrong URL)
+   - Live URL: https://lmenotti.github.io/5v5s/
+   - Changes: `docs/index.html` owner fix, fetch scoped to `json_files/`, KDA zero-death guard, `.nojekyll` added
+2. **Unify the pipeline** — one Python script: `json_files/` → aggregated stats → regenerate `stats.txt` + optional static JSON for the site
+3. **Replace GitHub API fetching in the browser** — precompute `docs/data/players.json` at build time (no rate limits, instant load)
+4. **Decide on replay ingestion** — stick with ReplayBook, or finish roflxd integration with a schema transform
+5. **Consolidate notebooks** into scripts with `requirements.txt`
+6. **Fix portability** — relative paths, remove Windows-specific absolute paths
+
+---
+
+## Verification Commands
+
+```bash
+# Confirm Pages site is live
+curl -sL -o /dev/null -w "%{http_code}\n" https://lmenotti.github.io/5v5s/
+
+# Validate JSON corpus
+python3 -c "
+import json, os
+files = [f for f in os.listdir('json_files') if f.endswith('.json')]
+assert len(files) == 87
+for f in files:
+    d = json.load(open(f'json_files/{f}'))
+    assert len(d['participants']) == 10
+print('OK:', len(files), 'matches')
+"
+
+# Check Pages config (requires gh CLI)
+gh api repos/lmenotti/5v5s/pages
+```
+
+---
+
+*This document should be updated when major architectural changes are made.*

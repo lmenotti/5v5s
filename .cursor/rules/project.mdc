@@ -1,0 +1,9 @@
+---
+description: 5v5s project-specific conventions
+alwaysApply: true
+---
+
+# 5v5s Project Rules
+
+- Do **not** use Linear for this project. Skip Linear MCP/API updates after code changes.
+- See `docs/PROJECT_NOTES.md` and `docs/AUDIT.md` for architecture and priorities.

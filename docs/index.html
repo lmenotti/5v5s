@@ -64,9 +64,10 @@
     <div class="loading" id="loading">Loading data, please wait...</div>
 
     <script>
-        // GitHub API details
-        const owner = 'lucamenotti';
+        // GitHub API details (owner must match repo: lmenotti/5v5s)
+        const owner = 'lmenotti';
         const repo = '5v5s';
+        const jsonPath = 'json_files';
         const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents`;
 
         async function fetchFilesFromGitHub(path = '') {
@@ -123,7 +124,7 @@
         }
 
         async function fetchAndProcessPlayerData() {
-            const jsonFilesUrls = await fetchFilesFromGitHub();
+            const jsonFilesUrls = await fetchFilesFromGitHub(jsonPath);
             const playerStats = {};
 
             for (const url of jsonFilesUrls) {
@@ -182,7 +183,10 @@
                                 playerStats[primaryName].losses++;
                             }
                             playerStats[primaryName].WinRate = 100 * playerStats[primaryName].wins / playerStats[primaryName].matches || 0;
-                            playerStats[primaryName].kda = (playerStats[primaryName].kills + playerStats[primaryName].assists) / playerStats[primaryName].deaths;
+                            const deaths = playerStats[primaryName].deaths;
+                            playerStats[primaryName].kda = deaths > 0
+                                ? (playerStats[primaryName].kills + playerStats[primaryName].assists) / deaths
+                                : playerStats[primaryName].kills + playerStats[primaryName].assists;
                             playerStats[primaryName].dpm = playerStats[primaryName].time_played > 0
                                 ? playerStats[primaryName].damage / (playerStats[primaryName].time_played / 60) : 0;
                             playerStats[primaryName].cspm = playerStats[primaryName].time_played_cs > 0
