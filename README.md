@@ -6,7 +6,9 @@ Stats tracker for custom League of Legends 5v5 games with friends.
 
 **https://lmenotti.github.io/5v5s/**
 
-GitHub Pages serves `docs/index.html`, which loads precomputed stats from `docs/data/players.json`.
+GitHub Pages serves `docs/index.html`, which loads precomputed stats from `docs/data/players.json` and `docs/data/league.json`.
+
+Dashboard tabs: **Profile** (recent form sparkline), **Rankings**, **Meta**, **Duos**, **Compare** (side-by-side + head-to-head), and **Records** (single-game highs, streaks, pentas).
 
 ## Quick start
 
@@ -49,7 +51,7 @@ Core scripts use **Python 3 stdlib only**. Optional notebook dependencies are in
 | `json_files/` | Match data (one JSON file per game) |
 | `scripts/` | Import, build, and analysis tooling |
 | `docs/data/players.json` | Anonymized player stats for the dashboard |
-| `docs/data/league.json` | Rankings, meta, and duo stats |
+| `docs/data/league.json` | Rankings, meta, duos, records, MVP, head-to-head |
 | `docs/` | GitHub Pages site + documentation |
 | `notebooks/legacy/` | Archived 2024 exploration notebooks |
 | `RoflBatchExporter/` | Optional .NET replay importer |
