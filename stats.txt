@@ -1,33 +1,37 @@
-Player: adostraa  Win Rate: 58.33%  Games Played: 60  Average Kills per Match: 7.12  Average KDA: 3.53
-Player: nigeriacoc  Win Rate: 52.54%  Games Played: 59  Average Kills per Match: 5.03  Average KDA: 2.97
-Player: TylerToTheT212  Win Rate: 67.86%  Games Played: 56  Average Kills per Match: 7.32  Average KDA: 3.91
-Player: IbelieveMeYou  Win Rate: 48.15%  Games Played: 54  Average Kills per Match: 6.74  Average KDA: 2.56
-Player: Ashalo1  Win Rate: 39.58%  Games Played: 48  Average Kills per Match: 6.40  Average KDA: 2.59
-Player: ihyash  Win Rate: 53.85%  Games Played: 39  Average Kills per Match: 2.97  Average KDA: 4.02
-Player: DonutDude17  Win Rate: 63.16%  Games Played: 38  Average Kills per Match: 3.50  Average KDA: 2.57
-Player: GasterBat  Win Rate: 68.75%  Games Played: 32  Average Kills per Match: 4.03  Average KDA: 2.31
-Player: Bryant  Win Rate: 66.67%  Games Played: 30  Average Kills per Match: 3.30  Average KDA: 3.29
-Player: uWumnati  Win Rate: 33.33%  Games Played: 27  Average Kills per Match: 1.74  Average KDA: 1.34
-Player: batlife10  Win Rate: 36.00%  Games Played: 25  Average Kills per Match: 1.24  Average KDA: 1.93
-Player: Dyneliex  Win Rate: 30.43%  Games Played: 23  Average Kills per Match: 6.26  Average KDA: 2.35
-Player: DookieDemon12  Win Rate: 33.33%  Games Played: 21  Average Kills per Match: 2.62  Average KDA: 1.24
+Player: IbelieveMeYou  Win Rate: 48.05%  Games Played: 77  Average Kills per Match: 6.56  Average KDA: 2.58
+Player: nigeriacoc  Win Rate: 44.74%  Games Played: 76  Average Kills per Match: 4.53  Average KDA: 2.53
+Player: TylerToTheT212  Win Rate: 69.33%  Games Played: 75  Average Kills per Match: 7.48  Average KDA: 4.10
+Player: adostraa  Win Rate: 59.42%  Games Played: 69  Average Kills per Match: 6.70  Average KDA: 3.34
+Player: ihyash  Win Rate: 48.21%  Games Played: 56  Average Kills per Match: 2.96  Average KDA: 4.06
+Player: Ashalo1  Win Rate: 44.44%  Games Played: 54  Average Kills per Match: 6.65  Average KDA: 2.83
+Player: DonutDude17  Win Rate: 62.96%  Games Played: 54  Average Kills per Match: 3.44  Average KDA: 2.79
+Player: Bryant  Win Rate: 65.85%  Games Played: 41  Average Kills per Match: 3.59  Average KDA: 3.52
+Player: Dyneliex  Win Rate: 31.71%  Games Played: 41  Average Kills per Match: 6.61  Average KDA: 2.25
+Player: batlife10  Win Rate: 50.00%  Games Played: 38  Average Kills per Match: 1.76  Average KDA: 2.81
+Player: GasterBat  Win Rate: 65.71%  Games Played: 35  Average Kills per Match: 3.83  Average KDA: 2.18
+Player: uWumnati  Win Rate: 31.25%  Games Played: 32  Average Kills per Match: 1.84  Average KDA: 1.31
+Player: DookieDemon12  Win Rate: 30.00%  Games Played: 30  Average Kills per Match: 2.50  Average KDA: 1.19
+Player: Little Bro Eman  Win Rate: 65.38%  Games Played: 26  Average Kills per Match: 7.77  Average KDA: 3.65
 Player: Babar  Win Rate: 42.11%  Games Played: 19  Average Kills per Match: 3.89  Average KDA: 1.99
-Player: MilkLL  Win Rate: 46.15%  Games Played: 13  Average Kills per Match: 4.85  Average KDA: 2.62
-Player: Little Bro Eman  Win Rate: 50.00%  Games Played: 10  Average Kills per Match: 7.40  Average KDA: 3.12
+Player: BloodStainedRose  Win Rate: 38.89%  Games Played: 18  Average Kills per Match: 7.72  Average KDA: 2.77
+Player: MilkLL  Win Rate: 41.18%  Games Played: 17  Average Kills per Match: 4.53  Average KDA: 2.44
+Player: takoyakiii  Win Rate: 46.15%  Games Played: 13  Average Kills per Match: 1.92  Average KDA: 2.01
+Player: ugly rat orphan  Win Rate: 53.85%  Games Played: 13  Average Kills per Match: 6.92  Average KDA: 2.72
+Player: Suiseî  Win Rate: 54.55%  Games Played: 11  Average Kills per Match: 4.64  Average KDA: 1.75
+Player: Xxcoolguy42069xX  Win Rate: 60.00%  Games Played: 10  Average Kills per Match: 5.80  Average KDA: 1.94
+Player: somethin idk  Win Rate: 33.33%  Games Played: 9  Average Kills per Match: 2.00  Average KDA: 1.02
 Player: Jickens  Win Rate: 33.33%  Games Played: 9  Average Kills per Match: 6.11  Average KDA: 2.05
-Player: somethin idk  Win Rate: 37.50%  Games Played: 8  Average Kills per Match: 1.88  Average KDA: 1.04
-Player: BloodStainedRose  Win Rate: 50.00%  Games Played: 8  Average Kills per Match: 6.00  Average KDA: 2.16
-Player: dizzycat11  Win Rate: 14.29%  Games Played: 7  Average Kills per Match: 8.29  Average KDA: 2.15
+Player: Chris  Win Rate: 37.50%  Games Played: 8  Average Kills per Match: 5.38  Average KDA: 2.32
+Player: dizzycat11  Win Rate: 25.00%  Games Played: 8  Average Kills per Match: 8.38  Average KDA: 2.32
 Player: p1eissoawesome  Win Rate: 20.00%  Games Played: 5  Average Kills per Match: 5.80  Average KDA: 2.14
-Player: Su5hiS  Win Rate: 25.00%  Games Played: 4  Average Kills per Match: 2.25  Average KDA: 1.7
+Player: Su5hiS  Win Rate: 25.00%  Games Played: 4  Average Kills per Match: 2.25  Average KDA: 1.70
 Player: MonkeyMan4912  Win Rate: 25.00%  Games Played: 4  Average Kills per Match: 2.75  Average KDA: 0.47
 Player: aeti  Win Rate: 0.00%  Games Played: 3  Average Kills per Match: 2.00  Average KDA: 0.69
 Player: Mossidy  Win Rate: 0.00%  Games Played: 3  Average Kills per Match: 1.67  Average KDA: 1.89
-Player: takoyakiii  Win Rate: 33.33%  Games Played: 3  Average Kills per Match: 2.33  Average KDA: 2.27
-Player: SkyMaster3o5  Win Rate: 50.00%  Games Played: 2  Average Kills per Match: 10.00  Average KDA: 2.45
+Player: kebinlee  Win Rate: 0.00%  Games Played: 3  Average Kills per Match: 1.67  Average KDA: 1.10
 Player: TinyTiger  Win Rate: 100.00%  Games Played: 2  Average Kills per Match: 3.50  Average KDA: 7.25
 Player: Rin Reforged  Win Rate: 100.00%  Games Played: 2  Average Kills per Match: 4.00  Average KDA: 10.33
-Player: kebinlee  Win Rate: 0.00%  Games Played: 2  Average Kills per Match: 2.50  Average KDA: 0.93
-Player: trunksthefuture  Win Rate: 50.00%  Games Played: 2  Average Kills per Match: 5.50  Average KDA: 5.5
-Player: KittenSlayer420  Win Rate: 100.00%  Games Played: 1  Average Kills per Match: 0.00  Average KDA: 1.0
-Player: Detraplex  Win Rate: 100.00%  Games Played: 1  Average Kills per Match: 1.00  Average KDA: 0.4
+Player: SweatyChezGCO  Win Rate: 0.00%  Games Played: 2  Average Kills per Match: 2.00  Average KDA: 0.62
+Player: KittenSlayer420  Win Rate: 100.00%  Games Played: 1  Average Kills per Match: 0.00  Average KDA: 1.00
+Player: Detraplex  Win Rate: 100.00%  Games Played: 1  Average Kills per Match: 1.00  Average KDA: 0.40
+Player: ﬂy high  Win Rate: 100.00%  Games Played: 1  Average Kills per Match: 4.00  Average KDA: 3.25

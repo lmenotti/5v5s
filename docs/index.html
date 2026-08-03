@@ -7,8 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/aceh" rel="stylesheet">
     <style>
-        /* Custom CSS */
-        /* forcing redeploy */
         body {
             padding: 20px;
             font-family: 'Aceh', sans-serif;
@@ -41,22 +39,27 @@
         .col3 {
             background-color: #a0a0a0;
         }
+        .meta {
+            text-align: center;
+            color: rgba(0, 0, 0, 0.55);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
 <body style="background-color:rgb(255, 255, 255);">
     <div class="container">
         <h1 class="text-center">5v5 Stats</h1>
+        <p class="meta" id="meta"></p>
         <div class="dropdown mt-3">
             <button class="btn btn-primary dropdown-toggle" type="button" id="playerDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 Select Player
             </button>
             <ul class="dropdown-menu" aria-labelledby="playerDropdown">
-                <!-- Dropdown items will be populated dynamically -->
             </ul>
         </div>
         <div class="stats-container">
             <div id="playerStats" class="row mt-4">
-                <!-- Player stats will be displayed here in three columns -->
             </div>
         </div>
     </div>
@@ -64,173 +67,14 @@
     <div class="loading" id="loading">Loading data, please wait...</div>
 
     <script>
-        // GitHub API details (owner must match repo: lmenotti/5v5s)
-        const owner = 'lmenotti';
-        const repo = '5v5s';
-        const jsonPath = 'json_files';
-        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents`;
+        const DATA_URL = 'data/players.json';
 
-        async function fetchFilesFromGitHub(path = '') {
-            try {
-                const url = `${apiUrl}/${path}`;
-                const response = await fetch(url);
-
-                if (response.status === 403) {
-                    throw new Error('Rate limit exceeded. Please wait before trying again.');
-                }
-
-                if (!response.ok) {
-                    throw new Error(`Network response was not ok: ${response.statusText}`);
-                }
-
-                const files = await response.json();
-                const jsonFiles = [];
-
-                for (const file of files) {
-                    if (file.type === 'file' && file.name.endsWith('.json')) {
-                        jsonFiles.push(file.download_url);
-                    } else if (file.type === 'dir') {
-                        jsonFiles.push(...await fetchFilesFromGitHub(file.path));
-                    }
-                }
-
-                return jsonFiles;
-            } catch (error) {
-                console.error('Error fetching files from GitHub:', error.message);
-                alert(error.message); // Display the error message to the user
-                return []; // Return an empty array to indicate failure without clearing the cache
+        async function loadPlayerData() {
+            const response = await fetch(DATA_URL);
+            if (!response.ok) {
+                throw new Error(`Failed to load player data (${response.status})`);
             }
-        }
-
-
-        async function fetchJsonFromUrl(url) {
-            const response = await fetch(url);
-            return await response.json();
-        }
-
-        const playerAliases = {
-            'EnderDragon7474': 'Ashalo1',
-            'Ashalo1': 'Ashalo1',
-            'RaVe B00ST': 'Bryant',
-            'CoomerHashira': 'Bryant',
-            'Item Diversity': 'BloodStainedRose',
-            'BigPeTe1239': 'DookieDemon12',
-            'SkyMaster3o5': 'Chris',
-            'trunksthefuture': 'Chris'
-        };
-
-        function getPrimaryName(name) {
-            return playerAliases[name] || name;
-        }
-
-        async function fetchAndProcessPlayerData() {
-            const jsonFilesUrls = await fetchFilesFromGitHub(jsonPath);
-            const playerStats = {};
-
-            for (const url of jsonFilesUrls) {
-                const match = await fetchJsonFromUrl(url);
-
-                if (match && match.participants) {
-                    const participants = match.participants;
-
-                    for (const player of participants) {
-                        if (player.NAME) {
-                            const primaryName = getPrimaryName(player.NAME);
-                            const team = player.TEAM;
-
-                            if (!playerStats[primaryName]) {
-                                playerStats[primaryName] = {
-                                    matches: 0,
-                                    wins: 0,
-                                    losses: 0,
-                                    kills: 0,
-                                    deaths: 0,
-                                    assists: 0,
-                                    penta_kills: 0,
-                                    teammates: {},
-                                    skins: {},
-                                    teammateWinRates: [],
-                                    WinRate: 0,
-                                    kda: 0,
-                                    damage: 0,
-                                    time_played: 0,
-                                    cs: 0,
-                                    time_played_cs: 0
-                                };
-                            }
-
-                            playerStats[primaryName].matches++;
-                            playerStats[primaryName].kills += parseInt(player.CHAMPIONS_KILLED || 0);
-                            playerStats[primaryName].assists += parseInt(player.ASSISTS || 0);
-                            playerStats[primaryName].deaths += parseInt(player.NUM_DEATHS || 0);
-                            playerStats[primaryName].penta_kills += parseInt(player.PENTA_KILLS || 0);
-                            playerStats[primaryName].time_played += parseInt(player.TIME_PLAYED || 0, 10);
-                            playerStats[primaryName].damage += parseInt(player.TOTAL_DAMAGE_DEALT_TO_CHAMPIONS || 0, 10);
-                            if (((parseInt(player.MINIONS_KILLED) + parseInt(player.NEUTRAL_MINIONS_KILLED))/(parseInt(player.TIME_PLAYED) / 60)) > 2) {
-                                playerStats[primaryName].cs += parseInt(player.MINIONS_KILLED || 0, 10);
-                                playerStats[primaryName].cs += parseInt(player.NEUTRAL_MINIONS_KILLED || 0, 10);
-                                playerStats[primaryName].time_played_cs += parseInt(player.TIME_PLAYED || 0, 10);
-                            }
-
-                            if (!playerStats[primaryName].skins[player.SKIN]) {
-                                playerStats[primaryName].skins[player.SKIN] = 0;
-                            }
-                            playerStats[primaryName].skins[player.SKIN]++;
-
-                            if (player.WIN === 'Win') {
-                                playerStats[primaryName].wins++;
-                            } else {
-                                playerStats[primaryName].losses++;
-                            }
-                            playerStats[primaryName].WinRate = 100 * playerStats[primaryName].wins / playerStats[primaryName].matches || 0;
-                            const deaths = playerStats[primaryName].deaths;
-                            playerStats[primaryName].kda = deaths > 0
-                                ? (playerStats[primaryName].kills + playerStats[primaryName].assists) / deaths
-                                : playerStats[primaryName].kills + playerStats[primaryName].assists;
-                            playerStats[primaryName].dpm = playerStats[primaryName].time_played > 0
-                                ? playerStats[primaryName].damage / (playerStats[primaryName].time_played / 60) : 0;
-                            playerStats[primaryName].cspm = playerStats[primaryName].time_played_cs > 0
-                                ? playerStats[primaryName].cs / (playerStats[primaryName].time_played_cs / 60) : 0;
-                            playerStats[primaryName].total_cspm = playerStats[primaryName].time_played > 0
-                                ? playerStats[primaryName].cs / (playerStats[primaryName].time_played / 60) : 0;
-
-                            participants.forEach(teammate => {
-                                if (teammate.TEAM === team && teammate.NAME !== player.NAME) {
-                                    const teammateName = getPrimaryName(teammate.NAME);
-
-                                    playerStats[primaryName].teammates[teammateName] = (playerStats[primaryName].teammates[teammateName] || 0) + 1;
-
-                                    if (!playerStats[teammateName]) {
-                                        playerStats[teammateName] = {
-                                            matches: 0,
-                                            wins: 0,
-                                            losses: 0,
-                                            kills: 0,
-                                            deaths: 0,
-                                            assists: 0,
-                                            penta_kills: 0,
-                                            teammates: {},
-                                            skins: {},
-                                            teammateWinRates: [],
-                                            WinRate: 0,
-                                            kda: 0,
-                                            damage: 0,
-                                            time_played: 0,
-                                            cs: 0,
-                                            time_played_cs: 0
-                                        };
-                                    }
-
-                                    const teammateWinRate = playerStats[teammateName].wins / playerStats[teammateName].matches || 0;
-                                    playerStats[primaryName].teammateWinRates.push(teammateWinRate);
-                                }
-                            });
-                        }
-                    }
-                }
-            }
-
-            return playerStats;
+            return response.json();
         }
 
         function loadPlayerStats(playerName, stats) {
@@ -240,10 +84,7 @@
                 ? stats.teammateWinRates.reduce((acc, rate) => acc + rate, 0) / stats.teammateWinRates.length * 100
                 : 0;
 
-            // Sort skins by count in descending order
             const sortedSkins = Object.entries(stats.skins).sort((a, b) => b[1] - a[1]);
-
-            // Sort teammates by games played in descending order
             const sortedTeammates = Object.entries(stats.teammates).sort((a, b) => b[1] - a[1]);
 
             container.innerHTML = `
@@ -284,74 +125,42 @@
             `;
         }
 
-        // Function to initialize the dropdown menu and load player data
         async function initialize() {
             const loadingIndicator = document.getElementById('loading');
+            const meta = document.getElementById('meta');
 
-            // Check if player stats are cached and if the cache is recent (within the last 6 hours)
-            let playerStats = JSON.parse(localStorage.getItem('playerStats'));
-            const cacheTimestamp = localStorage.getItem('cacheTimestamp');
-            const isCacheValid = cacheTimestamp && (Date.now() - parseInt(cacheTimestamp)) < 6 * 60 * 60 * 1000; // 6 hours
+            try {
+                const payload = await loadPlayerData();
+                const playerStats = payload.players;
+                const generatedAt = new Date(payload.generatedAt).toLocaleString();
+                meta.textContent = `${payload.matchCount} matches · updated ${generatedAt}`;
 
-            if (!playerStats || !isCacheValid) {
-                // Fetch and process player data if no valid cache is found
-                playerStats = await fetchAndProcessPlayerData();
-                localStorage.setItem('playerStats', JSON.stringify(playerStats));
-                localStorage.setItem('cacheTimestamp', Date.now().toString());
+                const sortedPlayerNames = Object.keys(playerStats).sort(
+                    (a, b) => playerStats[b].matches - playerStats[a].matches
+                );
+
+                const dropdownMenu = document.querySelector('.dropdown-menu');
+                dropdownMenu.innerHTML = '';
+                sortedPlayerNames.forEach(playerName => {
+                    const playerItem = document.createElement('a');
+                    playerItem.className = 'dropdown-item';
+                    playerItem.href = '#';
+                    playerItem.innerText = `${playerName} (${playerStats[playerName].matches} games)`;
+                    playerItem.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        loadPlayerStats(playerName, playerStats[playerName]);
+                    });
+                    dropdownMenu.appendChild(playerItem);
+                });
+            } catch (error) {
+                console.error('Error loading player data:', error);
+                meta.textContent = 'Unable to load player data.';
+                alert('Unable to load player data. Run scripts/build_stats.py after adding matches.');
+            } finally {
+                loadingIndicator.style.display = 'none';
             }
-
-            // Sort player names by number of games played in descending order
-            const sortedPlayerNames = Object.keys(playerStats).sort((a, b) => playerStats[b].matches - playerStats[a].matches);
-
-            const dropdownMenu = document.querySelector('.dropdown-menu');
-            dropdownMenu.innerHTML = ''; // Clear previous dropdown items
-            sortedPlayerNames.forEach(playerName => {
-                const playerItem = document.createElement('a');
-                playerItem.className = 'dropdown-item';
-                playerItem.href = '#';
-                playerItem.innerText = `${playerName} (${playerStats[playerName].matches} games)`;
-
-                playerItem.addEventListener('click', () => loadPlayerStats(playerName, playerStats[playerName]));
-
-                dropdownMenu.appendChild(playerItem);
-            });
-
-            loadingIndicator.style.display = 'none';
         }
 
-        // Refresh Button Logic
-        const refreshButton = document.createElement('button');
-        refreshButton.innerText = 'Refresh Data';
-        refreshButton.className = 'btn btn-secondary';
-        refreshButton.onclick = async () => {
-            try {
-                // Attempt to fetch new data from GitHub
-                const newPlayerStats = await fetchAndProcessPlayerData();
-
-                // Check if newPlayerStats is empty, indicating a fetch failure
-                if (Object.keys(newPlayerStats).length === 0) {
-                    alert("Unable to refresh data: GitHub access limit reached. Try again later.");
-                    return; // Exit early if data was not fetched
-                }
-
-                // If fetch is successful, update the cache
-                localStorage.setItem('playerStats', JSON.stringify(newPlayerStats));
-                localStorage.setItem('cacheTimestamp', Date.now().toString());
-                alert("Data refreshed successfully!");
-
-                // Reinitialize to reflect the new data
-                initialize();
-            } catch (error) {
-                console.error('Error refreshing data:', error);
-                alert("Unable to refresh data: An unexpected error occurred.");
-            }
-        };
-
-        document.body.appendChild(refreshButton);
-
-
-
-        // Initialize the dropdown and load data
         initialize();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
